@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./main-user.nix
     ];
 
   # Bootloader.
@@ -82,15 +83,15 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kered = {
-    isNormalUser = true;
-    description = "kered";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
+  # users.users.kered = {
+  #   isNormalUser = true;
+  #   description = "kered";
+  #   extraGroups = [ "networkmanager" "wheel" ];
+  #   packages = with pkgs; [
+  #     firefox
     #  thunderbird
-    ];
-  };
+  #   ];
+  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -132,6 +133,10 @@
 
   # My configuration
 
+  ## User
+  main-user.enable = true;
+  main-user.username = "kered";
+
   ## Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -141,6 +146,9 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  ## Zsh
+  programs.zsh.enable = true;
 
   ## run `nixos-rebuild switch --upgrade`
   system.autoUpgrade.enable = true;
