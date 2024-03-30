@@ -132,6 +132,9 @@
 
   # My configuration
 
+  ## Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
+
   ## Steam
   programs.steam = {
     enable = true;
