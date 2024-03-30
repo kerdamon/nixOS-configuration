@@ -2,13 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./main-user.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -133,9 +134,18 @@
 
   # My configuration
 
-  ## User
+  ## Users
   main-user.enable = true;
-  main-user.username = "kered";
+  main-user.userName = "kered";
+
+  ## Home manager
+  home-manager = {
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "kered" = import ./home.nix;
+    };
+  };
 
   ## Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
@@ -153,3 +163,4 @@
   ## run `nixos-rebuild switch --upgrade`
   system.autoUpgrade.enable = true;
 }
+
