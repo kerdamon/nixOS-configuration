@@ -72,5 +72,13 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # My configuration
+
+  ## hprland
+  wayland.windowManager.hyprland = {
+    enable = true;
+    plugins = [ ];
+  };
 }
 

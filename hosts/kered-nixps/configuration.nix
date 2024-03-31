@@ -101,9 +101,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     firefox
-  #  wget
+
+    kitty
+    rofi-wayland
+
+    # hyprland dependencies
+    waybar
+    dunst
+    swww
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -148,6 +155,15 @@
     };
   };
 
+  ## XDG Desktop Portal (https://wiki.hyprland.org/Useful-Utilities/xdg-desktop-portal-hyprland/)
+  xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # <- hyperland wiki says that this is needed for file picker, but I am getting errors that it already exists during build
+
+  ## Hyprland
+  programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
   ## Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -161,7 +177,7 @@
   ## Zsh
   programs.zsh.enable = true;
 
-  ## run `nixos-rebuild switch --upgrade`
+  ## run `nixos-rebuild switch --upgrade` once a day
   system.autoUpgrade.enable = true;
 }
 
