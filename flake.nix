@@ -14,7 +14,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./hosts/kered-nixps/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
