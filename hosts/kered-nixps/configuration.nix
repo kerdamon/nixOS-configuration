@@ -156,13 +156,14 @@
   };
 
   ## XDG Desktop Portal (https://wiki.hyprland.org/Useful-Utilities/xdg-desktop-portal-hyprland/)
-  xdg.portal.enable = true;
+  ## TODO check fi this should be enabled, now it could be because I have gnome enabled
+  # xdg.portal.enable = true;
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # <- hyperland wiki says that this is needed for file picker, but I am getting errors that it already exists during build
 
   ## Hyprland
   programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # "force" some programs to use wayland instead of xorg
+  programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
 
   ## Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
@@ -179,5 +180,7 @@
 
   ## run `nixos-rebuild switch --upgrade` once a day
   system.autoUpgrade.enable = true;
+
+  hardware.opengl.enable = true;
 }
 

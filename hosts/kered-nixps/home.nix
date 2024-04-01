@@ -76,9 +76,9 @@
   # My configuration
 
   ## hprland
-  wayland.windowManager.hyprland = {
-    enable = true;
-    plugins = [ ];
-  };
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #   plugins = [ ];
+  # };
 }
 
