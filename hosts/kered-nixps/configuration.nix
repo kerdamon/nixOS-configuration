@@ -103,6 +103,7 @@
     git
     vim
     firefox
+    vscode
 
     kitty
     rofi-wayland
