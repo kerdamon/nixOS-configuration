@@ -170,7 +170,7 @@
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
 
   ## Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   ## Steam
   programs.steam = {
@@ -186,5 +186,24 @@
   system.autoUpgrade.enable = true;
 
   hardware.opengl.enable = true;
+
+  # keyd
+  services.keyd.enable = true;
+  services.keyd.keyboards = {
+    builtinKeyboard = {
+      ids = ["*"];
+      settings = {
+        main = {
+          capslock = "overload(hyper, esc)";
+        };
+        "hyper:C-M-A-S-G" = {
+	  h = "left";
+	  j = "down";
+	  k = "up";
+	  l = "right";
+        };
+      };
+    };
+  };
 }
 
