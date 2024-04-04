@@ -1,5 +1,10 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.waybar}/bin/waybar &
+  '';
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -76,9 +81,12 @@
   # My configuration
 
   ## hprland
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  #   plugins = [ ];
-  # };
+  wayland.windowManager.hyprland = {
+    enable = true;
+    extraConfig = builtins.readFile ./hyprland.conf;
+    settings = {
+      exec-once = ''${startupScript}/bin/start'';
+    };
+  };
 }
 
