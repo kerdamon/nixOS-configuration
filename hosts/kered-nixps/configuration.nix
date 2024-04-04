@@ -196,6 +196,7 @@
       settings = {
         main = {
           capslock = "overload(hyper, esc)";
+          "102nd" = "leftmeta";
         };
         "hyper:C-M-A-S-G" = {
 	  h = "left";
