@@ -62,6 +62,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ]; # Brother printer drivers. Printer was not working on generic drivers.
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -210,5 +211,12 @@
 
   ## np-applet
   programs.nm-applet.enable = true;
+
+  ## auto discovery of network printers
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 }
 
