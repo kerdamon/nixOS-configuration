@@ -188,7 +188,7 @@
 
   hardware.opengl.enable = true;
 
-  # keyd
+  ## keyd
   services.keyd.enable = true;
   services.keyd.keyboards = {
     builtinKeyboard = {
@@ -207,5 +207,8 @@
       };
     };
   };
+
+  ## np-applet
+  programs.nm-applet.enable = true;
 }
 
