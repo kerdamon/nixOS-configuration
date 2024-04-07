@@ -39,6 +39,7 @@ in
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    obsidian
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -88,5 +89,8 @@ in
       exec-once = ''${startupScript}/bin/start'';
     };
   };
+
+  ## allow unfree
+  nixpkgs.config.allowUnfree = true;
 }
 
