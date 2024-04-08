@@ -40,6 +40,7 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
     obsidian
+    audacity
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
