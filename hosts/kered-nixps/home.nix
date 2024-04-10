@@ -41,6 +41,7 @@ in
     # '')
     obsidian
     audacity
+    thefuck
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -93,5 +94,19 @@ in
 
   ## allow unfree
   nixpkgs.config.allowUnfree = true;
+
+  ## shell
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
+  };
+
 }
 
