@@ -166,9 +166,11 @@
   # xdg.portal.enable = true;
   # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # <- hyperland wiki says that this is needed for file picker, but I am getting errors that it already exists during build
 
+  ## Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # force electron app to use wayland on NixOS. On other systems, env variable for this should be ELECTRON_OZONE_PLATFORM_HINT = "wayland"
+
   ## Hyprland
   programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # "force" some programs to use wayland instead of xorg
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
 
   ## Flakes
