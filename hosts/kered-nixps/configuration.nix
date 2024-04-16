@@ -230,5 +230,11 @@
   services.fprintd.enable = true;
   security.pam.services.swaylock = {};
   security.pam.services.swaylock.fprintAuth = true;
+
+  ## global bash aliases
+  environment.shellAliases = {
+    cdnix = "cd /etc/nixos/";
+  };
+
 }
 
