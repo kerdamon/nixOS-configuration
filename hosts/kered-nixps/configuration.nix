@@ -113,6 +113,7 @@
     waybar
     dunst
     swww
+    brightnessctl
   ];
 
   fonts.packages = with pkgs; [
@@ -235,6 +236,5 @@
   environment.shellAliases = {
     cdnix = "cd /etc/nixos/";
   };
-
 }
 
