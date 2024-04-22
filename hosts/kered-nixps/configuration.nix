@@ -109,6 +109,9 @@
     kitty
     rofi-wayland
 
+    # cli
+    wl-clipboard
+
     # hyprland dependencies
     waybar
     dunst
