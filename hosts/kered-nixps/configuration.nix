@@ -115,7 +115,7 @@
     # hyprland dependencies
     waybar
     dunst
-    swww
+    hyprpaper
     brightnessctl
   ];
 

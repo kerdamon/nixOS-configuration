@@ -31,6 +31,7 @@ in
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hyprpaper.conf;
   };
 
   home.sessionVariables = { };
