@@ -50,6 +50,7 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
+  ## shell
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -61,5 +62,8 @@ in
       theme = "robbyrussell";
     };
   };
+
+  ## notification deamon
+  services.dunst.enable = true;
 }
 
