@@ -229,9 +229,9 @@
   services.blueman.enable = true;
 
   ## fingerprint login
-  services.fprintd.enable = true;
-  security.pam.services.swaylock = {};
-  security.pam.services.swaylock.fprintAuth = true;
+  # services.fprintd.enable = true;
+  # security.pam.services.swaylock = {};
+  # security.pam.services.swaylock.fprintAuth = true;
 
   ## global bash aliases
   environment.shellAliases = {
