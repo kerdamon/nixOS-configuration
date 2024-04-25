@@ -114,7 +114,6 @@
 
     # hyprland dependencies
     waybar
-    hyprpaper
     brightnessctl
   ];
 
