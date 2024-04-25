@@ -237,5 +237,8 @@
   environment.shellAliases = {
     cdnix = "cd /etc/nixos/";
   };
+
+  ## don’t shutdown when power button is short-pressed (handling button is done in hyprland bind)
+  services.logind.powerKey = "suspend";
 }
 
