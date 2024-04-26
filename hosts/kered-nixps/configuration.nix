@@ -101,20 +101,20 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    vim
     firefox
     vscode
 
     kitty
     rofi-wayland
-
-    # cli
-    wl-clipboard
-
-    # hyprland dependencies
+    git
+    vim
     waybar
     brightnessctl
+    wl-clipboard # cli clipboard
+    grim # screenshot
+    slurp # select area for screenshot
+    swappy # quick and simple editor for images (e.g. screenshots)
+    wf-recorder # cli for recording screen
   ];
 
   fonts.packages = with pkgs; [
