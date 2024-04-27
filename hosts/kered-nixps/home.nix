@@ -18,6 +18,7 @@ in
     obsidian
     audacity
     thefuck
+    wlogout
 
     hyprpaper
     hypridle
@@ -25,9 +26,10 @@ in
   ];
 
   home.file = {
-    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hyprpaper.conf;
-    ".config/hypr/hypridle.conf".source = ./dotfiles/hypridle.conf;
-    ".config/hypr/hyprlock.conf".source = ./dotfiles/hyprlock.conf;
+    ".config/hypr/hyprpaper.conf".source = ./dotfiles/hypr/hyprpaper.conf;
+    ".config/hypr/hypridle.conf".source = ./dotfiles/hypr/hypridle.conf;
+    ".config/hypr/hyprlock.conf".source = ./dotfiles/hypr/hyprlock.conf;
+    ".config/waybar/config".source = ./dotfiles/waybar/config;
   };
 
   home.sessionVariables = { };
@@ -38,7 +40,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = builtins.readFile ./dotfiles/hypr/hyprland.conf;
     settings = {
       exec-once = ''${startupScript}/bin/start'';
     };

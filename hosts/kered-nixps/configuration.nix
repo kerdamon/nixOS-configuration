@@ -108,8 +108,8 @@
     rofi-wayland
     git
     vim
-    waybar
     brightnessctl
+    waybar
     wl-clipboard # cli clipboard
     grim # screenshot
     slurp # select area for screenshot
@@ -175,6 +175,9 @@
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
 
+  ## Waybar
+  # programs.waybar.enable = true;
+
   ## Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -238,7 +241,7 @@
     cdnix = "cd /etc/nixos/";
   };
 
-  ## don’t shutdown when power button is short-pressed (handling button is done in hyprland bind)
+  ## don’t shutdown when power button is short-pressed
   services.logind.powerKey = "suspend";
 }
 
