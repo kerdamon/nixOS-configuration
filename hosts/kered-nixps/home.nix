@@ -19,7 +19,7 @@ in
     audacity
     thefuck
     wlogout
-
+    nil
     hyprpaper
     hypridle
     hyprlock
