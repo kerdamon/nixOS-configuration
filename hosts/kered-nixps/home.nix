@@ -15,10 +15,18 @@ in
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
+    # GUI apps
     obsidian
     audacity
+    discord
+
+    # CLI apps
     thefuck
+
+    # system utils
     wlogout
+
+    # dependencies
     nil
     hyprpaper
     hypridle
