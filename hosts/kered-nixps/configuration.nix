@@ -203,14 +203,15 @@
       ids = ["*"];
       settings = {
         main = {
-          capslock = "overload(hyper, esc)";
+          capslock = "overload(hyper, esc)"; # capslock goes into hyper mode (defined below) when held, and acts like esc when tapped
           "102nd" = "leftmeta";
         };
-        "hyper:C-M-A-S-G" = {
+        "hyper:C" = { # definition of hyper mode. :C means that it works as a control for any other key that is not defined below
 	  h = "left";
 	  j = "down";
 	  k = "up";
 	  l = "right";
+          esc = "capslock"; # esc in hyper mode gives capslock
         };
       };
     };
