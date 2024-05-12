@@ -111,9 +111,12 @@
     brightnessctl
     waybar
     wl-clipboard # cli clipboard
+
+    # screenshots and recording screen
     grim # screenshot
     slurp # select area for screenshot
     swappy # quick and simple editor for images (e.g. screenshots)
+    imagemagick # "convert" command for manipulating images in cli as streams
     wf-recorder # cli for recording screen
   ];
 
