@@ -246,7 +246,7 @@
   };
 
   ## don’t shutdown when power button is short-pressed
-  services.logind.powerKey = "suspend";
+  services.logind.powerKey = "lock";
 
   ## docker
   virtualisation.docker.enable = true;
