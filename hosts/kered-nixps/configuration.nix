@@ -250,5 +250,11 @@
 
   ## docker
   virtualisation.docker.enable = true;
+
+  ## nix helper (nh)
+  programs.nh = {
+    enable = true;
+    flake = "/home/kered/Data/nixos-conf";
+  };
 }
 
