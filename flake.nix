@@ -17,7 +17,7 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixps = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/kered-nixps/configuration.nix
