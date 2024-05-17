@@ -109,6 +109,7 @@
     git
     vim
     brightnessctl
+    playerctl # controls players, toggle play-stop etc.
     waybar
     wl-clipboard # cli clipboard
 
