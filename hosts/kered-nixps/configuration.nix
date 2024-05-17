@@ -240,11 +240,6 @@
   # security.pam.services.swaylock = {};
   # security.pam.services.swaylock.fprintAuth = true;
 
-  ## global bash aliases
-  environment.shellAliases = {
-    cdnix = "cd /etc/nixos/";
-  };
-
   ## don’t shutdown when power button is short-pressed
   services.logind.powerKey = "lock";
 

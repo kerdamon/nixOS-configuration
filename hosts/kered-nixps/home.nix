@@ -40,7 +40,13 @@ in
     ".config/waybar/config".source = ./dotfiles/waybar/config;
   };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    "NIXOS_CONF_PATH" = "/home/kered/Data/nixos-conf";
+  };
+
+  home.shellAliases = { # aliases for all shells
+    "cdnix" = "cd $NIXOS_CONF_PATH";
+  };
 
   programs.home-manager.enable = true;
 
