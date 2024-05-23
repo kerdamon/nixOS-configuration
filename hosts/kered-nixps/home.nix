@@ -75,6 +75,11 @@ in
     };
   };
 
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   ## notification deamon
   services.dunst.enable = true;
 }
