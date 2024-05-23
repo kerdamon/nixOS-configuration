@@ -252,5 +252,12 @@
     enable = true;
     flake = "/home/kered/Data/nixos-conf";
   };
-}
 
+  # stylix
+  stylix.cursor.package = pkgs.bibata-cursors;
+  stylix.cursor.name = "Bibata-Original-Classic";
+  stylix.cursor.size = 20;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml"; #theme gallery: https://tinted-theming.github.io/base16-gallery/
+  stylix.image = ./wallpapers/2.jpg;
+  stylix.fonts.sizes.applications = 10;
+}
