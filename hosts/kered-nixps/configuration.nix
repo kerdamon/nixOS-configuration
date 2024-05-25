@@ -44,18 +44,18 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # # Enable the GNOME Desktop Environment.
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "pl";
-    variant = "";
-  };
+  # # Configure keymap in X11
+  # services.xserver.xkb = {
+  #   layout = "pl";
+  #   variant = "";
+  # };
 
   # Configure console keymap
   console.keyMap = "pl2";
@@ -167,17 +167,20 @@
     };
   };
 
-  ## XDG Desktop Portal (https://wiki.hyprland.org/Useful-Utilities/xdg-desktop-portal-hyprland/)
-  ## TODO check fi this should be enabled, now it could be because I have gnome enabled
-  # xdg.portal.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # <- hyperland wiki says that this is needed for file picker, but I am getting errors that it already exists during build
-
   ## Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # force electron app to use wayland on NixOS. On other systems, env variable for this should be ELECTRON_OZONE_PLATFORM_HINT = "wayland"
 
   ## Hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland; # force to use package from flake, not from nixpkgs
+  };
+
+  ## Desktop portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # hyprland enables xdg-desktop-portal-hyprland, which does not support file picker. Adding this alongside is recommended by hyprland wiki 
+  };
 
   ## Waybar
   # programs.waybar.enable = true;
@@ -211,10 +214,10 @@
           "102nd" = "leftmeta";
         };
         "hyper:C" = { # definition of hyper mode. :C means that it works as a control for any other key that is not defined below
-	  h = "left";
-	  j = "down";
-	  k = "up";
-	  l = "right";
+          h = "left";
+          j = "down";
+          k = "up";
+          l = "right";
           esc = "capslock"; # esc in hyper mode gives capslock
         };
       };
@@ -253,11 +256,13 @@
     flake = "/home/kered/Data/nixos-conf";
   };
 
-  # stylix
+  ## stylix
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Original-Classic";
-  stylix.cursor.size = 20;
+  stylix.cursor.size = 24;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml"; #theme gallery: https://tinted-theming.github.io/base16-gallery/
   stylix.image = ./wallpapers/2.jpg;
   stylix.fonts.sizes.applications = 10;
+
+  services.power-profiles-daemon.enable = true;
 }
