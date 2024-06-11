@@ -23,6 +23,7 @@ in
     # CLI apps
     thefuck
     kalker
+    devbox
 
     # system utils
     wlogout
