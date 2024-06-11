@@ -22,6 +22,7 @@ in
 
     # CLI apps
     thefuck
+    kalker
 
     # system utils
     wlogout
