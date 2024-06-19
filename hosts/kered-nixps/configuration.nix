@@ -103,6 +103,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     vscode
+    cinnamon.nemo
 
     kitty
     rofi-wayland
