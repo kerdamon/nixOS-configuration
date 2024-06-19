@@ -243,9 +243,7 @@
   services.blueman.enable = true;
 
   ## fingerprint login
-  # services.fprintd.enable = true;
-  # security.pam.services.swaylock = {};
-  # security.pam.services.swaylock.fprintAuth = true;
+  services.fprintd.enable = true;
 
   ## don’t shutdown when power button is short-pressed
   services.logind.powerKey = "lock";
