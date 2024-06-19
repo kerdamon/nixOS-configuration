@@ -85,5 +85,19 @@ in
 
   ## notification deamon
   services.dunst.enable = true;
+
+  ## Theming
+  gtk = {
+    enable = true;
+    iconTheme.package = pkgs.gruvbox-plus-icons;
+    iconTheme.name = "Gruvbox-Plus-Dark";
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style.name = "adwaita-dark";
+    style.package = pkgs.adwaita-qt;
+  };
 }
 
