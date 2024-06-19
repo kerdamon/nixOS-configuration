@@ -263,7 +263,21 @@
   stylix.cursor.size = 24;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml"; #theme gallery: https://tinted-theming.github.io/base16-gallery/
   stylix.image = ./wallpapers/2.jpg;
-  stylix.fonts.sizes.applications = 10;
+  stylix.fonts = {
+    sizes.applications = 10;
+    monospace = {
+      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      name = "JetBrainsMono Nerd Font Mono";
+    };
+    sansSerif = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
+    };
+    serif = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Serif";
+    };
+  };
 
   services.power-profiles-daemon.enable = true;
 }
