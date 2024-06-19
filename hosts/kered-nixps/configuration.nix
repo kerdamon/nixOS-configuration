@@ -104,7 +104,6 @@
     firefox
     vscode
     pavucontrol
-    cinnamon.nemo
 
     kitty
     rofi-wayland
@@ -280,4 +279,8 @@
   };
 
   services.power-profiles-daemon.enable = true;
+
+  programs.thunar.enable = true; # file manager
+  services.tumbler.enable = true; # thumbnailer (shows preview in file manager)
+  services.gvfs.enable = true; # virtual filesystem (e.g. mounts network drives)
 }
