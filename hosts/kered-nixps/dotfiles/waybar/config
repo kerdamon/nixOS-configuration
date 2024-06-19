@@ -46,7 +46,8 @@
   "pulseaudio": {
     "format": " {volume}%",
     "format-bluetooth": " {volume}%",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "cpu": {
     "format": " {usage}%"
