@@ -24,6 +24,7 @@ in
     thefuck
     kalker
     devbox
+    neofetch
 
     # system utils
     wlogout
