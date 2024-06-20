@@ -2,9 +2,7 @@
   "layer": "top",
   "modules-left": [
     "power-profiles-daemon",
-    "cpu",
-    "memory",
-    "temperature",
+    "group/hardware",
     "tray",
     "hyprland/workspaces"
   ],
@@ -19,19 +17,30 @@
     "battery",
     "network",
     "clock",
-    "keyboard-state",
-    "custom/power"
+    "custom/logout-manager"
   ],
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
   "network": {
-    "format-wifi": "",
-    "format-ethernet": "",
-    "format-disconnected": "",
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-disconnected": " ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected"
   },
   "battery": {
-    "format": "{icon} {capacity}%",
+    "format": "{icon}  {capacity}%",
     "format-icons": [
       "",
       "",
@@ -41,22 +50,22 @@
     ]
   },
   "backlight": {
-    "format": " {percent}%"
+    "format": "  {percent}%"
   },
   "pulseaudio": {
-    "format": " {volume}%",
-    "format-bluetooth": " {volume}%",
+    "format": "   {volume}%",
+    "format-bluetooth": "   {volume}% ",
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "cpu": {
-    "format": " {usage}%"
+    "format": "  {usage}%"
   },
   "memory": {
-    "format": " {percentage}%"
+    "format": "  {percentage}%"
   },
   "temperature": {
-    "format": " {temperatureC}°C"
+    "format": "  {temperatureC}°C"
   },
   "clock": {
     "format": "{:%H:%M  %d-%m-%Y}"
@@ -79,8 +88,8 @@
       "power-saver": ""
     }
   },
-  "custom/power": {
-    "format": "  ",
+  "custom/logout-manager": {
+    "format": "   ",
     "tooltip": "Logout manager",
     "on-click": "wlogout --protocol layer-shell"
   }

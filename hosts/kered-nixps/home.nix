@@ -1,10 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let
-  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.waybar}/bin/waybar &
-  '';
-in
 {
   home.username = "kered";
   home.homeDirectory = "/home/kered";
@@ -25,6 +20,7 @@ in
     kalker
     devbox
     neofetch
+    btop
 
     # system utils
     wlogout
@@ -58,9 +54,6 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = builtins.readFile ./dotfiles/hypr/hyprland.conf;
-    settings = {
-      exec-once = ''${startupScript}/bin/start'';
-    };
   };
 
   nixpkgs.config.allowUnfree = true;
