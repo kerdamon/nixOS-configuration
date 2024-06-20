@@ -260,7 +260,9 @@
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Original-Classic";
   stylix.cursor.size = 24;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml"; #theme gallery: https://tinted-theming.github.io/base16-gallery/
+  # theme gallery: https://tinted-theming.github.io/base16-gallery/
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
   stylix.image = ./wallpapers/2.jpg;
   stylix.fonts = {
     sizes.applications = 10;
