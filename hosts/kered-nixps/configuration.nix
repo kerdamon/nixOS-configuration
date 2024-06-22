@@ -107,7 +107,6 @@
 
     kitty
     rofi-wayland
-    git
     vim
     brightnessctl
     playerctl # controls players, toggle play-stop etc.
@@ -285,4 +284,11 @@
   programs.thunar.enable = true; # file manager
   services.tumbler.enable = true; # thumbnailer (shows preview in file manager)
   services.gvfs.enable = true; # virtual filesystem (e.g. mounts network drives)
+
+  programs.git = {
+    enable = true;
+    config = {
+      core.editor = "vim";
+    };
+  };
 }
