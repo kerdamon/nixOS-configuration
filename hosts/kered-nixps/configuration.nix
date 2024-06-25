@@ -281,9 +281,18 @@
 
   services.power-profiles-daemon.enable = true;
 
-  programs.thunar.enable = true; # file manager
+  ## file manager
+  programs.thunar = {
+    enable = true; 
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+      thunar-volman
+    ];
+  };
   services.tumbler.enable = true; # thumbnailer (shows preview in file manager)
   services.gvfs.enable = true; # virtual filesystem (e.g. mounts network drives)
+  programs.file-roller.enable = true; # archive manager
 
   programs.git = {
     enable = true;
