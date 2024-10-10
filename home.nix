@@ -6,6 +6,7 @@
   home.stateVersion = "24.05";
 
   programs.home-manager.enable = true;
+  targets.genericLinux.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -26,7 +27,14 @@
 
   # programs
 
-  programs.vim.enable = true;
+  programs.vim = {
+    enable = true;
+    settings = {
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+    };
+  };
 
   programs.git = {
     enable = true;
@@ -44,11 +52,15 @@
       plugins = [ "git" "thefuck" ];
       theme = "robbyrussell";
     };
+    sessionVariables = {
+      ANDROID_HOME = "/home/kered/Android/Sdk/";
+    };
   };
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
   };
 
+  programs.direnv.enable = true;
 }
 
