@@ -17,13 +17,18 @@ This is list of configuration and installed packages done outside of home-manage
 - `keyd` - sudo needed
   - `make` - needed for keyd
   - `gcc` - needed for keyd
+  - `sudo apt install make`, `suto apt install gcc`
+  - `git clone https://github.com/rvaiya/keyd`
+  - `cd keyd`
+  - `make && sudo make install`
+  - `sudo systemctl enable keyd && sudo systemctl start keyd`
 
 ## Fixes
 Fixes and tweaks.
 
 - `zsh`
   - installed and configured through hm, but setting as login shell need sudo
-  - path from nix profile was added to `/etc/shells` (valid login shells)
+  - path from nix profile (`which zsh`) was added to `/etc/shells` (valid login shells)
   - chsh was invoked, setting the zsh as login shell
 
 - Lifting AppArmor restrictions
