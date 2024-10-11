@@ -1,3 +1,14 @@
+# Installation
+
+- Install nix `sh <(curl -L https://nixos.org/nix/install) --daemon`
+- Enable experimental features
+  - Add `experimental-features = nix-command flakes` to `/etc/nix/nix.conf`
+- Init home-manager `nix run home-manager/master -- init --switch`
+
+# Switching to new config after making changes to configuration
+
+- Run `home-manager switch`
+
 # Configured by hand
 This is list of configuration and installed packages done outside of home-manager (mostly because it cannot be done through hm or is not working)
 
@@ -7,7 +18,7 @@ This is list of configuration and installed packages done outside of home-manage
   - `make` - needed for keyd
   - `gcc` - needed for keyd
 
-# Fixes
+## Fixes
 Fixes and tweaks.
 
 - `zsh`
