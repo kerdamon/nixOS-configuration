@@ -39,4 +39,5 @@ Fixes and tweaks.
     - persisting through sessions:
       - add `kernel.apparmor_restrict_unprivileged_userns=0` to `/etc/sysctl.d/<example-filename>.conf`
       - `sudo sysctl -p` or reboot to apply changes 
+    - based on [this](https://github.com/electron/electron/issues/42510#issuecomment-2171583086) and [this](https://github.com/arduino/arduino-ide/issues/2429#issuecomment-2099775010)
 
