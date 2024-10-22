@@ -19,7 +19,7 @@
   home.file = {
   };
 
-  home.sessionVariables = {
+  home.sessionVariables = { # log off and log in after switching to apply changes
     "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
   };
 
@@ -65,4 +65,5 @@
   };
 
   programs.direnv.enable = true;
+  programs.vscode.enable = true;
 }
