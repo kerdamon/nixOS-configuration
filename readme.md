@@ -1,5 +1,11 @@
 # Installation
 
+## Installing through script (recommended)
+
+- Install fresh linux distro and run `wget https://raw.githubusercontent.com/kerdamon/nixOS-configuration/main/init_generic_linux.sh && chmod +x init_generic_linux.sh && ./init_generic_linux.sh`
+
+## Manual install steps
+
 - Install nix `sh <(curl -L https://nixos.org/nix/install) --daemon`
 - Enable experimental features
   - Add `experimental-features = nix-command flakes` to `/etc/nix/nix.conf`
@@ -7,7 +13,8 @@
 
 # Switching to new config after making changes to configuration
 
-- Run `home-manager switch`
+- Flakes: `home-manager switch --flake <path>#<output-name>`
+- Without flake: `home-manager switch`
 
 # Configured by hand
 This is list of configuration and installed packages done outside of home-manager (mostly because it cannot be done through hm or is not working)
