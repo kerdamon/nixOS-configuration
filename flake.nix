@@ -36,6 +36,11 @@
         inherit pkgs;
         modules = [ ./hosts/kubuxps/home.nix ];
       };
+      
+      homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./hosts/generic-linux/home.nix ];
+      };
     };
 }
 
