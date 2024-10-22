@@ -20,11 +20,12 @@
   };
 
   home.sessionVariables = {
-    "NIXOS_CONF_PATH" = "/home/kered/.config/home-manager";
+    "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
   };
 
   home.shellAliases = { # aliases for all shells
-    "cdnix" = "cd $NIXOS_CONF_PATH";
+    "cdnix" = "cd $MY_NIX_CONF_PATH";
+    "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
   };
 
   # programs
