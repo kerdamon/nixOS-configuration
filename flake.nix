@@ -34,7 +34,7 @@
 
       homeConfigurations."kubuxps-kered" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./hosts/kubuxps/home.nix ];
       };
     };
 }
