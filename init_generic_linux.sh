@@ -59,14 +59,14 @@ if [[ $SETUP_CORE == true ]]; then
   nix run home-manager/master -- init $NIX_CONF_PATH
   rm -rf $NIX_CONF_PATH
   git clone $REPO_ADDRESS $NIX_CONF_PATH
-  home-manager switch --flake $NIX_CONF_PATH
+  bash -c "home-manager switch --flake $NIX_CONF_PATH#generic-linux"
   
   # set zsh as default shell
   ZSH_PATH=$(which zsh)
   sudo bash -c "echo $ZSH_PATH >> /etc/shells"
   chsh -s $(which zsh)
 
-  echo "Nix and home-manager setup complete"
+  echo "Nix and home-manager setup complete. HM switched to generic linux, remember to add new config for this device in $NIX_CONF_PATH"
 fi
 
 if [[ $SETUP_KEYD == true ]]; then
