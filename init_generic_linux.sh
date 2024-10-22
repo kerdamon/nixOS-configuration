@@ -53,10 +53,10 @@ if [[ $SETUP_CORE == true ]]; then
   # setup nix
   sh <(curl -L https://nixos.org/nix/install) --daemon
   sudo bash -c " echo 'experimental-features = nix-command flakes' >> /etc/nix/nix.conf"
-  exec $SHELL
+  source /etc/profile # TODO check if it works. Should make nix available in this shell session
 
   # setup home manager
-  nix run home-manager/master -- init $NIX_CONF_PATH
+  nix run home-manager/master -- init --switch $NIX_CONF_PATH
   rm -rf $NIX_CONF_PATH
   git clone $REPO_ADDRESS $NIX_CONF_PATH
   bash -c "home-manager switch --flake $NIX_CONF_PATH#generic-linux"
@@ -66,7 +66,7 @@ if [[ $SETUP_CORE == true ]]; then
   sudo bash -c "echo $ZSH_PATH >> /etc/shells"
   chsh -s $(which zsh)
 
-  echo "Nix and home-manager setup complete. HM switched to generic linux, remember to add new config for this device in $NIX_CONF_PATH"
+  echo "Nix and home-manager setup complete. Default shell switched to zsh, system restart required. HM switched to generic linux, remember to add new config for this device in $NIX_CONF_PATH."
 fi
 
 if [[ $SETUP_KEYD == true ]]; then
@@ -75,7 +75,7 @@ if [[ $SETUP_KEYD == true ]]; then
   nix-shell -p gnumake libgcc --run "make -C $HOME/tmp/keyd && sudo make -C $HOME/tmp/keyd install"
   sudo systemctl enable keyd && sudo systemctl start keyd
   sudo mkdir -p /etc/keyd
-  sudo cp ./dotfiles/keyd.conf /etc/keyd/default.conf
+  sudo cp $NIX_CONF_PATH/dotfiles/keyd.conf /etc/keyd/default.conf
   sudo keyd reload
   echo "Keyd setup complete"
 fi
