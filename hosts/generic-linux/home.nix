@@ -66,4 +66,10 @@
 
   programs.direnv.enable = true;
   programs.vscode.enable = true;
+
+  programs.plasma = {
+    enable = true;
+    input.keyboard.repeatDelay = 300;
+    input.keyboard.repeatRate = 60;
+  };
 }

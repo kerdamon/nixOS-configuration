@@ -16,6 +16,12 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -39,7 +45,10 @@
       
       homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/generic-linux/home.nix ];
+        modules = [ 
+          ./hosts/generic-linux/home.nix
+          inputs.plasma-manager.homeManagerModules.plasma-manager
+        ];
       };
     };
 }
