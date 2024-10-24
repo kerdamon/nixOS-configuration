@@ -48,6 +48,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    initExtra = "set -o vi";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
