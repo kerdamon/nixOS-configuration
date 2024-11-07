@@ -23,6 +23,7 @@
   home.sessionVariables = { # log off and log in after switching to apply changes
     "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
     "ANDROID_HOME" = "/home/kered/Files/Android/Sdk";
+    "GIT_EDITOR" = "vim";
   };
 
   home.shellAliases = { # aliases for all shells
