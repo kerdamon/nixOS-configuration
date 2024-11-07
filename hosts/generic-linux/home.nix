@@ -14,6 +14,7 @@
     postman
     devbox
     thefuck
+    android-studio
   ];
 
   home.file = {
@@ -21,6 +22,7 @@
 
   home.sessionVariables = { # log off and log in after switching to apply changes
     "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
+    "ANDROID_HOME" = "/home/kered/Files/Android/Sdk";
   };
 
   home.shellAliases = { # aliases for all shells
@@ -56,9 +58,6 @@
       plugins = [ "git" "thefuck" ];
       theme = "robbyrussell";
     };
-    sessionVariables = {
-      ANDROID_HOME = "/home/kered/Android/Sdk/";
-    };
   };
   programs.starship = {
     enable = true;
@@ -72,5 +71,6 @@
     enable = true;
     input.keyboard.repeatDelay = 300;
     input.keyboard.repeatRate = 60;
+    kscreenlocker.timeout = 15;
   };
 }
