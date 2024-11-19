@@ -5,6 +5,7 @@ NO_ARGS=true
 SETUP_CORE=false
 SETUP_KEYD=false
 SETUP_APPARMOR=false
+FIX_DUALBOOT_CLOCK=false
 
 while getopts "hckae" opt; do
   case $opt in
@@ -21,6 +22,11 @@ while getopts "hckae" opt; do
     a)
       NO_ARGS=false
       SETUP_APPARMOR=true
+      ;;
+
+    d)
+      NO_ARGS=false
+      FIX_DUALBOOT_CLOCK=true
       ;;
 
     # everything
@@ -80,9 +86,15 @@ if [[ $SETUP_KEYD == true ]]; then
   echo "Keyd setup complete"
 fi
 
+if [[ $FIX_DUALBOOT_CLOCK = true ]]; then # TODO check if it works
+  echo "Setting up dualboot BIOS clock fix - setting linux to use local time"
+  sudo timedatectl set-local-rtc 1 # to revert: sudo timedatectl set-local-rtc 0
+fi
+
 if [[ $SETUP_APPARMOR == true ]]; then
   echo "Setting up apparmor fix"
   sudo bash -c " echo 'kernel.apparmor_restrict_unprivileged_userns=0' >> /etc/sysctl.d/apparmor-fix.conf"
   sudo sysctl -p
   echo "Apparmor fix complete"
 fi
+
