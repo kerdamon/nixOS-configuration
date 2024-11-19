@@ -15,6 +15,10 @@
     devbox
     thefuck
     android-studio
+
+    # contenerization (without root)
+    colima
+    docker
   ];
 
   home.file = {
@@ -29,6 +33,7 @@
   home.shellAliases = { # aliases for all shells
     "cdnix" = "cd $MY_NIX_CONF_PATH";
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
+    "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
   };
 
   # programs
