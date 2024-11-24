@@ -66,7 +66,10 @@ if [[ $SETUP_CORE == true ]]; then
   rm -rf $NIX_CONF_PATH
   git clone $REPO_ADDRESS $NIX_CONF_PATH
   bash -c "home-manager switch --flake $NIX_CONF_PATH#generic-linux"
-  
+
+  # allow unfree for nix-shell, nix-env and nix-build
+  mkdir -p ~/.config/nixpkgs && echo "{ allowUnfree = true; }" > ~/.config/nixpkgs/config.nix # TODO check if works
+
   # set zsh as default shell
   ZSH_PATH=$(which zsh)
   sudo bash -c "echo $ZSH_PATH >> /etc/shells"
