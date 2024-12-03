@@ -10,11 +10,15 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    # GUI
     obsidian
     postman
     devbox
-    thefuck
     android-studio
+    discord
+
+    # terminal
+    thefuck
 
     # contenerization (without root)
     colima
