@@ -61,7 +61,10 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    initExtra = "set -o vi";
+    initExtra = ''
+      set -o vi
+      bindkey "^R" history-incremental-search-backward
+    '';
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
