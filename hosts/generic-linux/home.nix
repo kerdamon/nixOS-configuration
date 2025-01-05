@@ -43,6 +43,7 @@
     "hm-news" = "home-manager news --flake .#generic-linux";
     "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
     "cat" = "bat";
+    "cd" = "z";
     "open" = "kde-open $(fzf -m --preview='fzf-preview {}')";
   };
 
@@ -72,7 +73,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "vi-mode" "git" "thefuck" "fzf" ];
+      plugins = [ "vi-mode" "git" "thefuck" ];
       theme = "robbyrussell";
     };
   };
@@ -99,6 +100,11 @@
   programs.bat.enable = true;
 
   programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
   };
