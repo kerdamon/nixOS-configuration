@@ -19,7 +19,7 @@ while getopts "hckae" opt; do
       SETUP_KEYD=true
       ;;
 
-    a)
+    a) # apparmor is security feature of Ubuntu that blocks some programs sandboxes, so they will not work without it
       NO_ARGS=false
       SETUP_APPARMOR=true
       ;;
