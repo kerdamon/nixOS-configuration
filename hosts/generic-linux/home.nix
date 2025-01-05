@@ -19,6 +19,7 @@
 
     # terminal
     thefuck
+    mc
 
     # contenerization (without root)
     colima
