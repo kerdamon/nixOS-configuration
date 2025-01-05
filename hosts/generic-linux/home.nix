@@ -56,6 +56,8 @@
     };
   };
 
+  programs.neovim.enable = true;
+
   programs.git = {
     enable = true;
     userName = "kerdamon";
