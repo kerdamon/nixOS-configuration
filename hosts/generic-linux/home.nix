@@ -39,6 +39,7 @@
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
     "hm-news" = "home-manager news --flake .#generic-linux";
     "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
+    "cat" = "bat";
   };
 
   # programs
@@ -92,4 +93,6 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.bat.enable = true;
 }
