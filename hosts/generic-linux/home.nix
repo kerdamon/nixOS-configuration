@@ -23,6 +23,9 @@
     # contenerization (without root)
     colima
     docker
+
+    # scripts
+    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
   ];
 
   home.file = {
@@ -64,13 +67,16 @@
     enableCompletion = true;
     initExtra = ''
       set -o vi
-      bindkey "^R" history-incremental-search-backward
+      # Following bindkey "^R" is to enable reverse search in vim mode, because it doesn't have this keybinding out of the box
+      # It is comented because fzf is installed and fzf's zsh integration binds ctr + R to fuzzy find in history, therefore binding it here disables fzf
+      # If fzf is uninstalled, this need to be uncommented for ctrl + R to launch reverse history search in vim mode
+      # bindkey "^R" history-incremental-search-backward
     '';
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" "thefuck" "fzf" ];
       theme = "robbyrussell";
     };
   };
@@ -95,4 +101,9 @@
   };
 
   programs.bat.enable = true;
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
