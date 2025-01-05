@@ -87,4 +87,9 @@
     input.keyboard.repeatRate = 60;
     kscreenlocker.timeout = 15;
   };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
