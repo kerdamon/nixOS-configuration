@@ -108,4 +108,6 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.ripgrep.enable = true;
 }
