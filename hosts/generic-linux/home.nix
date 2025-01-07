@@ -9,7 +9,11 @@
   targets.genericLinux.enable = true;
   nixpkgs.config.allowUnfree = true;
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+
     # GUI
     obsidian
     postman
@@ -30,6 +34,7 @@
   ];
 
   home.file = {
+    ".config/kitty/kitty.conf".source = ../../dotfiles/kitty.conf;
   };
 
   home.sessionVariables = { # log off and log in after switching to apply changes
@@ -90,6 +95,10 @@
     input.keyboard.repeatDelay = 300;
     input.keyboard.repeatRate = 60;
     kscreenlocker.timeout = 15;
+    configFile = {
+      kdeglobals.General.TerminalApplication = "kitty";
+      kdeglobals.General.TerminalService = "kitty.desktop";
+    };
   };
 
   programs.eza = {
@@ -111,4 +120,5 @@
   };
 
   programs.ripgrep.enable = true;
+  # programs.kitty.enable = true; # doesn't work
 }
