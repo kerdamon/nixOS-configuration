@@ -22,7 +22,6 @@
     discord
 
     # terminal
-    thefuck
     mc
 
     # contenerization (without root)
@@ -122,4 +121,9 @@
 
   programs.ripgrep.enable = true;
   # programs.kitty.enable = true; # doesn't work
+
+  programs.thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
