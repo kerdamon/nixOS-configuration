@@ -63,7 +63,14 @@
     };
   };
 
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    extraConfig = ''
+      set tabstop=2
+      set shiftwidth=2
+      set expandtab
+    '';
+  };
 
   programs.git = {
     enable = true;
