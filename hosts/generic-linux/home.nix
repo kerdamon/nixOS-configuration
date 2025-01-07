@@ -44,6 +44,7 @@
   };
 
   home.shellAliases = { # aliases for all shells
+    "cdt" = "cd ~/tmp";
     "cdnix" = "cd $MY_NIX_CONF_PATH";
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
     "hm-news" = "home-manager news --flake .#generic-linux";
