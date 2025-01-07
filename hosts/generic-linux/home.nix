@@ -73,13 +73,20 @@
   
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh = {
+    defaultKeymap = "viins"; # vi mode
+    initExtra = ''
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive matching
+    '';
+    antidote = { # plugin manager
       enable = true;
-      plugins = [ "vi-mode" "git" "thefuck" ];
-      theme = "robbyrussell";
+      plugins = [
+        "zsh-users/zsh-completions"
+	"getantidote/use-omz" # oh-my-zsh dependencies - enables to use ozm plugins
+        # "ohmyzsh/ohmyzsh path:lib" # omz core functionalities (if I understand correctly)
+	"ohmyzsh/ohmyzsh path:plugins/git"
+      ];
     };
   };
   programs.starship = {
