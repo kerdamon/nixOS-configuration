@@ -30,6 +30,7 @@
 
     # scripts
     (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
+    (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh))
   ];
 
   home.file = {
@@ -46,7 +47,7 @@
     "cdt" = "cd ~/tmp";
     "cdnix" = "cd $MY_NIX_CONF_PATH";
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
-    "hm-news" = "home-manager news --flake .#generic-linux";
+    "hm-news" = "home-manager news --flake $MY_NIX_CONF_PATH#generic-linux";
     "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
     "cat" = "bat";
     "open" = "kde-open $(fzf -m --preview='fzf-preview {}')";
