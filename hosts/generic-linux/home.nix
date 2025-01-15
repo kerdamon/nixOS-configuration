@@ -123,6 +123,7 @@
     enable = true;
     input.keyboard.repeatDelay = 300;
     input.keyboard.repeatRate = 60;
+    input.keyboard.numlockOnStartup = "on";
     kscreenlocker.timeout = 15;
     configFile = {
       kdeglobals.General.TerminalApplication = "kitty";
