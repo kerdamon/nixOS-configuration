@@ -20,6 +20,7 @@
     devbox
     android-studio
     discord
+    rofi-wayland
 
     # terminal
     mc
