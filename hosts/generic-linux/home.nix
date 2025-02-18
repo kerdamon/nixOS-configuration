@@ -134,11 +134,7 @@
 
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-    Host github.com
-      HostName github.com
-      IdentityFile ~/.ssh/keys/github-kerdamon
-    '';
+    extraConfig = builtins.readFile ../../dotfiles/ssh.conf;
   };
 
   programs.eza = {
