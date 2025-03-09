@@ -78,8 +78,14 @@ Example:
 ssh-ed25519 SOME_SECRET_STRING kered@keospc
 ```
 
-## Build command
+### Build command
 
 `nix-build '<nixpkgs/nixos>' -A config.system.build.sdImage -I nixos-config=./sd-raspberrypi.nix`
 
 This will build image of system and create symlink to it in directory where invoked. In this directory there is image that could be flashed to sd card using etcher, rufus or dd.
+
+### Next steps
+
+1. Setup password using `passwd`
+2. Clone this repo
+3. `nixos-rebuild switch` to new configuration
