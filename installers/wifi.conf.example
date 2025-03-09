@@ -1,0 +1,4 @@
+{
+  ssid = "nazwasieci";
+  psk = "haslo";
+}
