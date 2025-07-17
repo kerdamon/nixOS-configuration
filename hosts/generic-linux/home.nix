@@ -157,9 +157,4 @@
 
   programs.ripgrep.enable = true;
   # programs.kitty.enable = true; # doesn't work
-
-  programs.thefuck = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 }
