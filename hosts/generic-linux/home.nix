@@ -29,6 +29,9 @@
     colima
     docker
 
+    # libraries
+    libsForQt5.kconfig
+
     # scripts
     (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
     (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh))
@@ -36,6 +39,7 @@
 
   home.file = {
     ".config/kitty/kitty.conf".source = ../../dotfiles/kitty.conf;
+    ".config/autostart/ueli.desktop".source = ../../dotfiles/ueli-autostart.desktop;
   };
 
   home.sessionVariables = { # log off and log in after switching to apply changes

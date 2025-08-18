@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Ueli
+Exec=ueli %U
+Icon=ueli
+Terminal=false
+
