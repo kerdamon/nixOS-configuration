@@ -32,6 +32,9 @@ This is list of configuration and installed packages done outside of home-manage
   - `make && sudo make install`
   - `sudo systemctl enable keyd && sudo systemctl start keyd`
 
+- `tailscale` - sudo needed
+  - installed through official install command `curl -fsSL https://tailscale.com/install.sh | sh`
+
 ### Fixes
 Fixes and tweaks.
 
