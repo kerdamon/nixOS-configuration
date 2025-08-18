@@ -19,6 +19,7 @@
     postman
     discord
     rofi-wayland
+    affine
 
     # cli
     mc
@@ -155,5 +156,4 @@
   };
 
   programs.ripgrep.enable = true;
-  # programs.kitty.enable = true; # doesn't work
 }
