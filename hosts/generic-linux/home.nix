@@ -17,13 +17,12 @@
     # GUI
     obsidian
     postman
-    devbox
-    android-studio
     discord
     rofi-wayland
 
-    # terminal
+    # cli
     mc
+    devbox
 
     # contenerization (without root)
     colima
