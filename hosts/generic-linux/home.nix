@@ -18,7 +18,6 @@
     obsidian
     postman
     discord
-    rofi-wayland
     affine
 
     # cli
@@ -103,6 +102,10 @@
       # nice previews for git. Requires delta.
       zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff $word | delta'
       zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview 'case "$group" in "modified file") git diff $word | delta ;; "recent commit object name") git show --color=always $word | delta ;; *) git log --color=always $word ;; esac'
+
+      if [[ -z "$TERM_PROGRAM" || "$TERM_PROGRAM" != "vscode" ]]; then
+        eval "$(zellij setup --generate-auto-start zsh)"
+      fi
     '';
     antidote = { # plugin manager
       enable = true;
@@ -160,4 +163,6 @@
   };
 
   programs.ripgrep.enable = true;
+
+  programs.zellij.enable = true;
 }
