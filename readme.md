@@ -1,3 +1,15 @@
+# Nix (darwin) on macOS
+
+## Installation
+
+- Install nix
+  - Recommended [determinate nix (fork)](https://github.com/DeterminateSystems/nix-installer): `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
+    - flakes by default
+    - easy uninstallation (one command)
+    - nix survives macOS upgrades
+  - Alternatively - official installer: `sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)`
+  - Note: Installs can be "upgraded". This means after installing using official installer you can just use determinate script to start managing it by determinate installer.
+
 # Home-manager standalone on linux
 
 ## Installation
@@ -92,3 +104,18 @@ This will build image of system and create symlink to it in directory where invo
 1. Setup password using `passwd`
 2. Clone this repo
 3. `nixos-rebuild switch` to new configuration
+
+# Sources
+
+- Determinate nix
+  - [website](https://docs.determinate.systems)
+  - [Installer](https://github.com/DeterminateSystems/nix-installer)
+- [Nix Darwin](https://github.com/nix-darwin/nix-darwin)
+- Home manager
+  - [Docs](https://nix-community.github.io/home-manager/)
+  - [Github](https://github.com/nix-community/home-manager)
+- Learning and resources
+  - [Zero to nix](https://zero-to-nix.com)
+  - [Package search](https://search.nixos.org/packages)
+  - [MyNixOs - options documentation](https://mynixos.com)
+
