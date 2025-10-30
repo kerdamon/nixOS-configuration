@@ -32,6 +32,9 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
+  # metadata - reference flake commit in system generation
+  system.configurationRevision = self.rev or self.dirtyRev or null;
+
   # This is becouse I am using determinate nix, which manages nix and it conflicts with darwin (see [prerequisities](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites))
   nix.enable = false;
 

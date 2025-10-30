@@ -74,13 +74,9 @@
           
           ./hosts/kmac5/configuration.nix
           home-manager.darwinModules.home-manager
-
-          {
-            system.configurationRevision = self.rev or self.dirtyRev or null; #metadata - reference flake commit in system generation
-          }
         ];
         specialArgs = {
-          inherit home-manager;
+          inherit home-manager self;
         };
       };
 
