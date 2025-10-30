@@ -2,6 +2,8 @@
 
 ## Installation
 
+- Install xcode
+  - `xcode-select --install`
 - Install nix
   - Recommended [determinate nix (fork)](https://github.com/DeterminateSystems/nix-installer): `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
     - flakes by default

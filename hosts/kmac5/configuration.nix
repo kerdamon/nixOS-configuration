@@ -6,11 +6,18 @@
     ./users.nix
   ];
 
-  environment.systemPackages = with pkgs;
-  [ 
-    vim
-    git
-  ];
+  environment.systemPackages = with pkgs; [];
+
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap"; # Remove packages not in config
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    casks = [
+      "zen"
+    ];
+    brews = [];
+  };
 
   environment.variables = {
     LANG = "pl_PL.UTF-8";
