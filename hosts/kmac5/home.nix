@@ -1,6 +1,10 @@
 { config, pkgs, nixpkgs, ... }:
 
 {
+  imports = [
+    ../../modules/home-manager/shell.nix
+  ];
+
   home.username = "kwalas";
   home.homeDirectory = "/Users/kwalas";
   home.stateVersion = "25.05";
