@@ -25,9 +25,8 @@
       zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff $word | delta'
       zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview 'case "$group" in "modified file") git diff $word | delta ;; "recent commit object name") git show --color=always $word | delta ;; *) git log --color=always $word ;; esac'
 
-      if [[ -z "$TERM_PROGRAM" || "$TERM_PROGRAM" != "vscode" ]]; then
-        eval "$(zellij setup --generate-auto-start zsh)"
-      fi
+      # open zellij if it is installed and terminal is not vscode
+      [[ -z "$TERM_PROGRAM" || "$TERM_PROGRAM" != "vscode" ]] && command -v zellij &>/dev/null && eval "$(zellij setup --generate-auto-start zsh)"
     '';
     antidote = { # plugin manager
       enable = true;
