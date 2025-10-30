@@ -34,4 +34,6 @@
 
   # This is becouse I am using determinate nix, which manages nix and it conflicts with darwin (see [prerequisities](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites))
   nix.enable = false;
+
+  services.tailscale.enable = true;
 }
