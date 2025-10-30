@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home-manager/shell.nix
+    ../../modules/home-manager/git.nix
   ];
 
   home.username = "kered";
@@ -79,13 +80,6 @@
       set shiftwidth=2
       set expandtab
     '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "kerdamon";
-    userEmail = "kwalas314@gmail.com";
-    delta.enable = true; # program for nice diff visualisation. Also used in fzf-tab previews.
   };
 
   programs.direnv.enable = true;

@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home-manager/shell.nix
+    ../../modules/home-manager/git.nix
   ];
 
   home.username = "kwalas";
