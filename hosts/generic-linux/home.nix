@@ -4,6 +4,7 @@
   imports = [
     ../../modules/home-manager/shell.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/ssh.nix
   ];
 
   home.username = "kered";
@@ -46,13 +47,15 @@
     ".config/autostart/ueli.desktop".source = ../../dotfiles/ueli-autostart.desktop;
   };
 
-  home.sessionVariables = { # log off and log in after switching to apply changes
+  # log off and log in after switching to apply changes
+  home.sessionVariables = {
     "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
     "ANDROID_HOME" = "/home/kered/Files/Android/Sdk";
     "GIT_EDITOR" = "vim";
   };
 
-  home.shellAliases = { # aliases for all shells
+  # aliases for all shells
+  home.shellAliases = {
     "cdt" = "cd ~/tmp";
     "cdnix" = "cd $MY_NIX_CONF_PATH";
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
@@ -95,11 +98,6 @@
       kdeglobals.General.TerminalApplication = "kitty";
       kdeglobals.General.TerminalService = "kitty.desktop";
     };
-  };
-
-  programs.ssh = {
-    enable = true;
-    extraConfig = builtins.readFile ../../dotfiles/ssh.conf;
   };
 
   programs.eza = {

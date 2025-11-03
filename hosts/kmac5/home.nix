@@ -9,6 +9,7 @@
   imports = [
     ../../modules/home-manager/shell.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/ssh.nix
   ];
 
   home.username = "kwalas";
