@@ -21,4 +21,8 @@
     vscode
     nil # needed for vscode nix linter to work
   ];
+
+  home.file = {
+    ".config/karabiner".source = ./dotfiles/karabiner;
+  };
 }
