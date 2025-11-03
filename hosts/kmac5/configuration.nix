@@ -1,12 +1,15 @@
-{ pkgs, self, nixpkgs, ... }:
+{
+  pkgs,
+  self,
+  nixpkgs,
+  ...
+}:
 {
   nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./users.nix
   ];
-
-  environment.systemPackages = with pkgs; [];
 
   homebrew = {
     enable = true;
@@ -16,12 +19,11 @@
     casks = [
       "zen"
     ];
-    brews = [];
   };
 
   environment.variables = {
     LANG = "pl_PL.UTF-8";
-    LC_MESSAGES="en_US.UTF-8";
+    LC_MESSAGES = "en_US.UTF-8";
     EDITOR = "vim";
   };
 
@@ -35,7 +37,7 @@
   # metadata - reference flake commit in system generation
   system.configurationRevision = self.rev or self.dirtyRev or null;
 
-  # This is becouse I am using determinate nix, which manages nix and it conflicts with darwin (see [prerequisities](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites))
+  # This is because I am using determinate nix, which manages nix and it conflicts with darwin (see [prerequisites](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites))
   nix.enable = false;
 
   services.tailscale.enable = true;

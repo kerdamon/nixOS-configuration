@@ -1,4 +1,9 @@
-{ config, pkgs, home-manager, ... }:
+{
+  config,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
   system.primaryUser = "kwalas";

@@ -39,13 +39,24 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      darwin,
+      nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       nixosConfigurations.nixps = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/kered-nixps/configuration.nix
           inputs.home-manager.nixosModules.default
@@ -68,10 +79,13 @@
               mutableTaps = false; # disable imperative brew tap
             };
           }
-          ({config, ...}: {
-            homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
-          })
-          
+          (
+            { config, ... }:
+            {
+              homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+            }
+          )
+
           ./hosts/kmac5/configuration.nix
           home-manager.darwinModules.home-manager
         ];
@@ -84,14 +98,13 @@
         inherit pkgs;
         modules = [ ./hosts/kubuxps/home.nix ];
       };
-      
+
       homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ 
+        modules = [
           ./hosts/generic-linux/home.nix
           inputs.plasma-manager.homeManagerModules.plasma-manager
         ];
       };
     };
 }
-
