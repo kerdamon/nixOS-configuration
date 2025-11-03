@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ../../modules/home-manager/shell.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/ssh.nix
+    ../../modules/home-manager/terminal-environment.nix
   ];
 
   home.username = "kered";
@@ -38,7 +39,6 @@
     libsForQt5.kconfig
 
     # scripts
-    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
     (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh))
   ];
 
@@ -100,20 +100,5 @@
     };
   };
 
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.bat.enable = true;
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-    options = [ "--cmd cd" ];
-  };
-
   programs.ripgrep.enable = true;
-
-  programs.zellij.enable = true;
 }

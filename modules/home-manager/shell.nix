@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
-    (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh))
   ];
 
   programs.zsh = {
@@ -28,14 +27,16 @@
       # open zellij if it is installed and terminal is not vscode
       [[ -z "$TERM_PROGRAM" || "$TERM_PROGRAM" != "vscode" ]] && command -v zellij &>/dev/null && eval "$(zellij setup --generate-auto-start zsh)"
     '';
-    antidote = { # plugin manager
+
+    # plugin manager
+    antidote = {
       enable = true;
       plugins = [
         "zsh-users/zsh-completions"
         "getantidote/use-omz" # oh-my-zsh dependencies - enables to use ozm plugins
         # "ohmyzsh/ohmyzsh path:lib" # omz core functionalities (if I understand correctly)
         "ohmyzsh/ohmyzsh path:plugins/git"
-        "ohmyzsh/ohmyzsh path:plugins/command-not-found" #TODO doesn't work, check how to fix this
+        "ohmyzsh/ohmyzsh path:plugins/command-not-found" # TODO doesn't work, check how to fix this
         "Aloxaf/fzf-tab"
       ];
     };
