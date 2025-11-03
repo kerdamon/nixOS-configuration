@@ -19,5 +19,6 @@
 
   home.packages = with pkgs; [
     vscode
+    nil # needed for vscode nix linter to work
   ];
 }
