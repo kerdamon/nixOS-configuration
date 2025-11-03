@@ -18,6 +18,7 @@
     onActivation.upgrade = true;
     casks = [
       "zen"
+      "raycast"
     ];
   };
 
