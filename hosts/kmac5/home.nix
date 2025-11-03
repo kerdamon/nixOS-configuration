@@ -22,11 +22,17 @@
   home.packages = with pkgs; [
     nil # needed for vscode nix linter to work
 
-    # (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh)) # TODO introduce update script for macOS
+    (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_mac.sh))
   ];
 
   home.file = {
     ".config/karabiner".source = ./dotfiles/karabiner;
+  };
+
+  # log off and log in after switching to apply changes
+  home.sessionVariables = {
+    "MY_NIX_CONF_PATH" = "/Users/kwalas/Config/nixOS-configuration";
+    "GIT_EDITOR" = "vim";
   };
 
   programs.vscode.enable = true;
