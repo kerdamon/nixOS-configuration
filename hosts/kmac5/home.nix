@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  nixpkgs,
-  ...
-}:
-
+{ pkgs, ... }:
 {
   imports = [
     ../../modules/home-manager/shell.nix
@@ -13,6 +7,7 @@
     ../../modules/home-manager/terminal-environment.nix
     ../../modules/home-manager/editors.nix
     ../../modules/home-manager/aliases.nix
+    ../../modules/home-manager/fonts.nix
   ];
 
   home.username = "kwalas";

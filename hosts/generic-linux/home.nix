@@ -8,6 +8,7 @@
     ../../modules/home-manager/terminal-environment.nix
     ../../modules/home-manager/editors.nix
     ../../modules/home-manager/aliases.nix
+    ../../modules/home-manager/fonts.nix
   ];
 
   home.username = "kered";
@@ -18,11 +19,7 @@
   targets.genericLinux.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  fonts.fontconfig.enable = true;
-
   home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-
     # GUI
     obsidian
     postman
