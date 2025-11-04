@@ -42,4 +42,14 @@
   nix.enable = false;
 
   services.tailscale.enable = true;
+
+  system.defaults = {
+    dock = {
+      autohide = true;
+    };
+    NSGlobalDomain = {
+      KeyRepeat = 1; # Fastest
+      InitialKeyRepeat = 15;
+    };
+  };
 }
