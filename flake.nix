@@ -55,22 +55,23 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.nixps = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+      homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         modules = [
-          ./hosts/kered-nixps/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
+          ./hosts/generic-linux/home.nix
+          inputs.plasma-manager.homeManagerModules.plasma-manager
         ];
       };
 
       darwinConfigurations.kmac5 = darwin.lib.darwinSystem {
         modules = [
+          ./hosts/kmac5/configuration.nix
+          home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
               enable = true;
-              enableRosetta = true;
+              # enableRosetta = true;
               user = "kwalas";
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
@@ -85,26 +86,24 @@
               homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
             }
           )
-
-          ./hosts/kmac5/configuration.nix
-          home-manager.darwinModules.home-manager
         ];
         specialArgs = {
           inherit home-manager self;
         };
       };
 
-      homeConfigurations."kubuxps-kered" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./hosts/kubuxps/home.nix ];
-      };
+      # nixosConfigurations.nixps = nixpkgs.lib.nixosSystem {
+      #   specialArgs = { inherit inputs; };
+      #   modules = [
+      #     ./hosts/kered-nixps/configuration.nix
+      #     inputs.home-manager.nixosModules.default
+      #     inputs.stylix.nixosModules.stylix
+      #   ];
+      # };
 
-      homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./hosts/generic-linux/home.nix
-          inputs.plasma-manager.homeManagerModules.plasma-manager
-        ];
-      };
+      # homeConfigurations."kubuxps-kered" = home-manager.lib.homeManagerConfiguration {
+      #   inherit pkgs;
+      #   modules = [ ./hosts/kubuxps/home.nix ];
+      # };
     };
 }
