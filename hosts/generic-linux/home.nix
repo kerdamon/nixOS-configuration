@@ -41,7 +41,7 @@
     libsForQt5.kconfig
 
     # scripts
-    (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_linux.sh))
+    (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_linux.sh))
   ];
 
   home.file = {
@@ -57,7 +57,7 @@
   };
 
   home.shellAliases = {
-    "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
+    "nix-switch" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
     "hm-news" = "home-manager news --flake $MY_NIX_CONF_PATH#generic-linux";
     "open" = "kde-open $(fzf -m --preview='fzf-preview {}')";
 

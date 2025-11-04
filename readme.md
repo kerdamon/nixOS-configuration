@@ -12,6 +12,10 @@
   - Alternatively - official installer: `sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)`
   - Note: Installs can be "upgraded". This means after installing using official installer you can just use determinate script to start managing it by determinate installer.
 
+## Rebuild and update
+
+To rebuild system use `nix-switch` (alias). To update flake and then update use `nix-update-switch` (script).
+
 # Home-manager standalone on linux
 
 ## Installation
@@ -31,6 +35,10 @@
 
 - Flakes: `home-manager switch --flake <path>#<output-name>`
 - Without flake: `home-manager switch`
+
+## Rebuild and update
+
+To rebuild system use `nix-switch` (alias). To update flake and then update use `nix-update-switch` (script).
 
 ## Things configured by hand
 This is list of configuration and installed packages done outside of home-manager (mostly because it cannot be done through hm or is not working)

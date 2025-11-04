@@ -24,7 +24,7 @@
   home.packages = with pkgs; [
     nil # needed for vscode nix linter to work
 
-    (writeShellScriptBin "update" (builtins.readFile ../../scripts/update_mac.sh))
+    (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_mac.sh))
   ];
 
   home.file = {
@@ -35,5 +35,9 @@
   home.sessionVariables = {
     "MY_NIX_CONF_PATH" = "/Users/kwalas/Config/nixOS-configuration";
     "GIT_EDITOR" = "vim";
+  };
+
+  home.shellAliases = {
+    "nix-switch" = "sudo darwin-rebuild switch --flake $MY_NIX_CONF_PATH#kmac5";
   };
 }
