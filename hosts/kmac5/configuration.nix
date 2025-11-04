@@ -1,7 +1,5 @@
 {
-  pkgs,
   self,
-  nixpkgs,
   ...
 }:
 {
@@ -48,6 +46,7 @@
       autohide = true;
     };
     NSGlobalDomain = {
+      ApplePressAndHoldEnabled = false; # upon holding key, repeat instead of showing accent menu
       KeyRepeat = 1; # Fastest
       InitialKeyRepeat = 15;
     };
