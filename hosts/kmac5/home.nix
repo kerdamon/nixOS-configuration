@@ -12,6 +12,7 @@
     ../../modules/home-manager/ssh.nix
     ../../modules/home-manager/terminal-environment.nix
     ../../modules/home-manager/editors.nix
+    ../../modules/home-manager/aliases.nix
   ];
 
   home.username = "kwalas";

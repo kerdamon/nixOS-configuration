@@ -7,6 +7,7 @@
     ../../modules/home-manager/ssh.nix
     ../../modules/home-manager/terminal-environment.nix
     ../../modules/home-manager/editors.nix
+    ../../modules/home-manager/aliases.nix
   ];
 
   home.username = "kered";
@@ -55,15 +56,12 @@
     "GIT_EDITOR" = "vim";
   };
 
-  # aliases for all shells
   home.shellAliases = {
-    "cdt" = "cd ~/tmp";
-    "cdnix" = "cd $MY_NIX_CONF_PATH";
     "hms" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
     "hm-news" = "home-manager news --flake $MY_NIX_CONF_PATH#generic-linux";
-    "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
-    "cat" = "bat";
     "open" = "kde-open $(fzf -m --preview='fzf-preview {}')";
+
+    "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
   };
 
   # programs
