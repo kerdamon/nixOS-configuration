@@ -6,6 +6,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/ssh.nix
     ../../modules/home-manager/terminal-environment.nix
+    ../../modules/home-manager/editors.nix
   ];
 
   home.username = "kered";
@@ -67,26 +68,7 @@
 
   # programs
 
-  programs.vim = {
-    enable = true;
-    settings = {
-      tabstop = 2;
-      shiftwidth = 2;
-      expandtab = true;
-    };
-  };
-
-  programs.neovim = {
-    enable = true;
-    extraConfig = ''
-      set tabstop=2
-      set shiftwidth=2
-      set expandtab
-    '';
-  };
-
   programs.direnv.enable = true;
-  programs.vscode.enable = true;
 
   programs.plasma = {
     enable = true;

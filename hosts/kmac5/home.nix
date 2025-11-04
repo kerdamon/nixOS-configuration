@@ -11,6 +11,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/ssh.nix
     ../../modules/home-manager/terminal-environment.nix
+    ../../modules/home-manager/editors.nix
   ];
 
   home.username = "kwalas";
@@ -34,6 +35,4 @@
     "MY_NIX_CONF_PATH" = "/Users/kwalas/Config/nixOS-configuration";
     "GIT_EDITOR" = "vim";
   };
-
-  programs.vscode.enable = true;
 }
