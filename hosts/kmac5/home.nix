@@ -18,12 +18,14 @@
 
   home.packages = with pkgs; [
     nil # needed for vscode nix linter to work
+    alacritty
 
     (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_mac.sh))
   ];
 
   home.file = {
     ".config/karabiner".source = ./dotfiles/karabiner;
+    ".config/alacritty/alacritty.toml".source = ../../dotfiles/alacritty.toml;
   };
 
   # log off and log in after switching to apply changes
