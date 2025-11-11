@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}:
-
+{ ... }:
 {
   system.primaryUser = "kwalas";
   users.users.kwalas = {
