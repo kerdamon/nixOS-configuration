@@ -41,6 +41,8 @@
 
   services.tailscale.enable = true;
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   system.defaults = {
     dock = {
       autohide = true;
