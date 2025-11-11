@@ -44,6 +44,8 @@
   system.defaults = {
     dock = {
       autohide = true;
+      persistent-apps = [ ];
+      show-recents = false;
     };
     NSGlobalDomain = {
       ApplePressAndHoldEnabled = false; # upon holding key, repeat instead of showing accent menu
