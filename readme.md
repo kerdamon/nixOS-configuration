@@ -14,7 +14,12 @@
 
 ## Rebuild and update
 
-To rebuild system use `nix-switch` (alias). To update flake and then update use `nix-update-switch` (script).
+To rebuild system use `nix-switch` (alias). To update flake and then switch use `nix-update-switch` (script).
+
+## Things configured by hand
+
+- copy ssh keys (e.g for github) to path specified in [dotfiles/ssh.conf](dotfiles/ssh.conf)
+- install karabiner-elements manually
 
 # Home-manager standalone on linux
 
@@ -38,7 +43,7 @@ To rebuild system use `nix-switch` (alias). To update flake and then update use 
 
 ## Rebuild and update
 
-To rebuild system use `nix-switch` (alias). To update flake and then update use `nix-update-switch` (script).
+To rebuild system use `nix-switch` (alias). To update flake and then switch use `nix-update-switch` (script).
 
 ## Things configured by hand
 This is list of configuration and installed packages done outside of home-manager (mostly because it cannot be done through hm or is not working)
@@ -128,4 +133,3 @@ This will build image of system and create symlink to it in directory where invo
   - [Zero to nix](https://zero-to-nix.com)
   - [Package search](https://search.nixos.org/packages)
   - [MyNixOs - options documentation](https://mynixos.com)
-
