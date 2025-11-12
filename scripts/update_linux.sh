@@ -7,7 +7,7 @@ neutral_color="\033[0m"
 echo -e "\n${highlight_color}Updating eos$neutral_color (eos-update --nvidia --aur)\n"
 eos-update --nvidia --aur 
 
-echo -e "\n${highlight_color}Updating home-manager flake$neutral_color (nix flake update --flake $MY_NIX_CONF_PATH)\n"
+echo -e "\n${highlight_color}Updating flake$neutral_color (nix flake update --flake $MY_NIX_CONF_PATH)\n"
 nix flake update --flake $MY_NIX_CONF_PATH
 
 echo -e "\n${highlight_color}Applying home-manager configuration$neutral_color (home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux)\n"
