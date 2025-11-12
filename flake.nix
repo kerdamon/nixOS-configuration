@@ -29,14 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -91,19 +83,5 @@
           inherit home-manager self;
         };
       };
-
-      # nixosConfigurations.nixps = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs; };
-      #   modules = [
-      #     ./hosts/kered-nixps/configuration.nix
-      #     inputs.home-manager.nixosModules.default
-      #     inputs.stylix.nixosModules.stylix
-      #   ];
-      # };
-
-      # homeConfigurations."kubuxps-kered" = home-manager.lib.homeManagerConfiguration {
-      #   inherit pkgs;
-      #   modules = [ ./hosts/kubuxps/home.nix ];
-      # };
     };
 }

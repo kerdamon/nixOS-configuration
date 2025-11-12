@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # This script is used to setup my configuration on macOS systems
 
+{ # Prevent execution if this script was only partially downloaded
+
 NIX_CONF_PATH="$HOME/Config/nix"
 HOSTNAME="kmac5"
 REPO_ADDRESS=https://github.com/kerdamon/nixOS-configuration.git
@@ -18,3 +20,5 @@ rm -rf $NIX_CONF_PATH
 git clone $REPO_ADDRESS $NIX_CONF_PATH
 
 sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake $NIX_CONF_PATH#$HOSTNAME
+
+}

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # This script is used to setup my configuration on generic (non-NixOS) linux systems.
 
+{ # Prevent execution if this script was only partially downloaded
+
 NO_ARGS=true
 SETUP_CORE=false
 SETUP_KEYD=false
@@ -101,3 +103,4 @@ if [[ $SETUP_APPARMOR == true ]]; then
   echo "Apparmor fix complete"
 fi
 
+}

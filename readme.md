@@ -2,6 +2,12 @@
 
 ## Installation
 
+### Installing through script (recommended)
+
+`curl -fsSL https://raw.githubusercontent.com/kerdamon/nixOS-configuration/main/installers/init_darwin.sh | sh`
+
+### Manual install steps
+
 - Install xcode
   - `xcode-select --install`
 - Install nix
@@ -27,7 +33,7 @@ To rebuild system use `nix-switch` (alias). To update flake and then switch use 
 
 ### Installing through script (recommended)
 
-- Install fresh linux distro and run `wget https://raw.githubusercontent.com/kerdamon/nixOS-configuration/main/init_generic_linux.sh && chmod +x init_generic_linux.sh && ./init_generic_linux.sh`
+- Install fresh linux distro and run `wget https://raw.githubusercontent.com/kerdamon/nixOS-configuration/main/installers/init_generic_linux.sh && chmod +x init_generic_linux.sh && ./init_generic_linux.sh`
 
 ### Manual install steps
 
