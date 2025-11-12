@@ -14,6 +14,7 @@
     casks = [
       "zen"
       "raycast"
+      "karabiner-elements"
     ];
   };
 

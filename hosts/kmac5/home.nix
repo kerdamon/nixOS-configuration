@@ -30,7 +30,7 @@
 
   # log off and log in after switching to apply changes
   home.sessionVariables = {
-    "MY_NIX_CONF_PATH" = "/Users/kwalas/Config/nixOS-configuration";
+    "MY_NIX_CONF_PATH" = "/Users/kwalas/Config/nix";
     "GIT_EDITOR" = "vim";
   };
 

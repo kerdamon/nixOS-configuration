@@ -19,7 +19,7 @@ To rebuild system use `nix-switch` (alias). To update flake and then switch use 
 ## Things configured by hand
 
 - copy ssh keys (e.g for [github](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)) to path specified in [dotfiles/ssh.conf](dotfiles/ssh.conf)
-- install karabiner-elements manually
+- karabiner-elements should work (if problem with grabber is still present go to settings Privacy and protection > input monitoring and add `/Library/Application\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_grabber` manually)
 
 # Home-manager standalone on linux
 
