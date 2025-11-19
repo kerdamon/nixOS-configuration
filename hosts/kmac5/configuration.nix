@@ -15,6 +15,7 @@
       "zen"
       "raycast"
       "karabiner-elements"
+      "tailscale-app" # services.tailscale does not install the app and does not enable needed permissions in macos, so exit nodes don't work
     ];
   };
 
@@ -36,8 +37,6 @@
 
   # This is because I am using determinate nix, which manages nix and it conflicts with darwin (see [prerequisites](https://github.com/nix-darwin/nix-darwin?tab=readme-ov-file#prerequisites))
   nix.enable = false;
-
-  services.tailscale.enable = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 

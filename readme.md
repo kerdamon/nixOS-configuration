@@ -139,3 +139,13 @@ This will build image of system and create symlink to it in directory where invo
   - [Zero to nix](https://zero-to-nix.com)
   - [Package search](https://search.nixos.org/packages)
   - [MyNixOs - options documentation](https://mynixos.com)
+
+# Remarks
+
+## Ensure tailscale exit node is used properly
+
+- ensure tailscale is up, and exit node is used
+- go to [whatismyip.com](https://www.whatismyip.com/)
+  - if it shows ip and address of exit node - it is working
+  - if not, something is wrong
+  - note, that for mac nix-darwin tailscale option was not working properly, tailscale-app from brew was working. Probably because of mac permissions etc.
