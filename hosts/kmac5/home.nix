@@ -8,6 +8,7 @@
     ../../modules/home-manager/editors.nix
     ../../modules/home-manager/aliases.nix
     ../../modules/home-manager/fonts.nix
+    ../../modules/home-manager/development.nix
   ];
 
   home.username = "kwalas";
@@ -18,7 +19,12 @@
 
   home.packages = with pkgs; [
     nil # needed for vscode nix linter to work
+
+    # GUI apps
     alacritty
+
+    # CLI apps
+    ripgrep
 
     (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_mac.sh))
   ];

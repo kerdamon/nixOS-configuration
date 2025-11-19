@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   imports = [
     ../../modules/home-manager/shell.nix
@@ -9,6 +8,7 @@
     ../../modules/home-manager/editors.nix
     ../../modules/home-manager/aliases.nix
     ../../modules/home-manager/fonts.nix
+    ../../modules/home-manager/development.nix
   ];
 
   home.username = "kered";
@@ -22,13 +22,11 @@
   home.packages = with pkgs; [
     # GUI
     obsidian
-    postman
     discord
     affine
 
     # cli
     mc
-    devbox
 
     # contenerization (without root)
     colima
@@ -60,10 +58,6 @@
 
     "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)
   };
-
-  # programs
-
-  programs.direnv.enable = true;
 
   programs.plasma = {
     enable = true;
