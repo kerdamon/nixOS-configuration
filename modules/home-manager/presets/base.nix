@@ -1,12 +1,12 @@
 { ... }:
 {
   imports = [
-    ../shell.nix
-    ../terminal-environment.nix
-    ../cli-editors.nix
-    ../git.nix
-    ../aliases.nix
-    ../cli-utils.nix
-    ../fonts.nix # TODO rethink if that should be in base
+    ../shared/shell.nix
+    ../shared/terminal-environment.nix
+    ../shared/cli-editors.nix
+    ../shared/git.nix
+    ../shared/aliases.nix
+    ../shared/cli-utils.nix
+    ../shared/fonts.nix # TODO rethink if that should be in base
   ];
 }

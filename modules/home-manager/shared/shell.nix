@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../scripts/fzf-preview.sh))
+    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../../scripts/fzf-preview.sh))
   ];
 
   programs.zsh = {

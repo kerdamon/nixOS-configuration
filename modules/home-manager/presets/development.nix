@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../dev-env.nix
+    ../shared/dev-env.nix
   ];
 
   home.packages = with pkgs; [
