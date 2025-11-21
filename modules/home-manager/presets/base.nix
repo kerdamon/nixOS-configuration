@@ -3,7 +3,7 @@
   imports = [
     ../shell.nix
     ../terminal-environment.nix
-    ../editors.nix
+    ../cli-editors.nix
     ../git.nix
     ../aliases.nix
     ../cli-utils.nix

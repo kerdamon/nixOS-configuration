@@ -1,7 +1,11 @@
 { ... }:
 {
   programs.zellij.enable = true; # enableZshIntegration is not used here, because it launched in vscode. It was moved to shell.nix. TODO move this here (make own enableZshIntegration)
+
   programs.bat.enable = true;
+  home.shellAliases = {
+    "cat" = "bat";
+  };
 
   programs.eza = {
     enable = true;
