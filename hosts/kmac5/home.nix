@@ -1,14 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/home-manager/shell.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/ssh.nix
-    ../../modules/home-manager/terminal-environment.nix
-    ../../modules/home-manager/editors.nix
-    ../../modules/home-manager/aliases.nix
-    ../../modules/home-manager/fonts.nix
-    ../../modules/home-manager/development.nix
+    ../../modules/home-manager/presets/base.nix
+    ../../modules/home-manager/presets/darwin.nix
+    ../../modules/home-manager/presets/development.nix
+    ../../modules/home-manager/presets/workstation.nix
   ];
 
   home.username = "kwalas";
@@ -22,9 +18,6 @@
 
     # GUI apps
     alacritty
-
-    # CLI apps
-    ripgrep
 
     (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_mac.sh))
   ];

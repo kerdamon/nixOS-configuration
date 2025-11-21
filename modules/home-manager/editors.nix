@@ -18,5 +18,5 @@
     '';
   };
 
-  programs.vscode.enable = true;
+  programs.vscode.enable = true; # TODO move to development and rename to cli-editors
 }
