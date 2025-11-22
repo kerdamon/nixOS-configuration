@@ -1,3 +1,5 @@
+# This file contains base Home Manager configuration shared across all systems
+
 { ... }:
 {
   imports = [
@@ -9,4 +11,7 @@
     ../shared/cli-utils.nix
     ../shared/fonts.nix # TODO rethink if that should be in base
   ];
+
+  programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 }

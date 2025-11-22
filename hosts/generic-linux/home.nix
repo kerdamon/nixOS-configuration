@@ -1,28 +1,21 @@
+# TODO move to presets/linux
 { pkgs, ... }:
 {
   imports = [
     ../../modules/home-manager/presets/base.nix
     ../../modules/home-manager/presets/linux.nix
-    ../../modules/home-manager/presets/development.nix
     ../../modules/home-manager/presets/workstation.nix
+    ../../modules/home-manager/presets/development.nix
   ];
 
   home.username = "kered";
   home.homeDirectory = "/home/kered";
-  home.stateVersion = "24.05";
-
-  programs.home-manager.enable = true;
-  targets.genericLinux.enable = true;
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     # GUI
     obsidian
     discord
     affine
-
-    # cli
-    mc
 
     # contenerization (without root)
     colima

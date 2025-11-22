@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     postman
+    nil # needed for vscode nix linter to work
   ];
 
   home.shellAliases = {

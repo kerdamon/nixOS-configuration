@@ -14,4 +14,8 @@
     enable = true;
     enableGitIntegration = true;
   };
+
+  home.sessionVariables = {
+    "GIT_EDITOR" = "vim";
+  };
 }
