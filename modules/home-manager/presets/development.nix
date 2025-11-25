@@ -14,6 +14,7 @@
   };
 
   programs.vscode.enable = true;
+  programs.gemini-cli.enable = true;
 
   # TODO activation scripts create ~/Development
 }
