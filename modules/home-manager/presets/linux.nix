@@ -2,6 +2,6 @@
 
 { ... }:
 {
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.05"; # TODO update?
   targets.genericLinux.enable = true;
 }
