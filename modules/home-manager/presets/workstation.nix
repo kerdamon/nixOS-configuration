@@ -1,3 +1,5 @@
+# This file contains Home Manager configuration specific to workstations (laptop, PC etc.)
+
 { ... }:
 {
   imports = [
