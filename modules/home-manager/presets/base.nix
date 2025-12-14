@@ -10,6 +10,7 @@
     ../shared/aliases.nix
     ../shared/cli-utils.nix
     ../shared/fonts.nix # TODO rethink if that should be in base
+    ../shared/backup.nix
   ];
 
   home.packages = with pkgs; [
