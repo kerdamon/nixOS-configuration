@@ -11,12 +11,14 @@
     onActivation.cleanup = "zap"; # Remove packages not in config
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
+    brews = [ "borgbackup/tap/borgbackup-fuse" ];
     casks = [
       "zen"
       "raycast"
       "karabiner-elements"
       "tailscale-app" # services.tailscale does not install the app and does not enable needed permissions in macos, so exit nodes don't work
       "obsidian"
+      "macfuse"
     ];
   };
 

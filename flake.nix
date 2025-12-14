@@ -18,6 +18,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    tap-borg-backup = {
+      url = "github:borgbackup/homebrew-tap";
+      flake = false;
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -40,6 +44,7 @@
       nix-homebrew,
       homebrew-core,
       homebrew-cask,
+      tap-borg-backup,
       ...
     }@inputs:
     let
@@ -68,6 +73,7 @@
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
+                "borgbackup/homebrew-tap" = tap-borg-backup;
               };
               mutableTaps = false; # disable imperative brew tap
             };

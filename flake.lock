@@ -155,7 +155,24 @@
         "homebrew-core": "homebrew-core",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "tap-borg-backup": "tap-borg-backup"
+      }
+    },
+    "tap-borg-backup": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765400043,
+        "narHash": "sha256-ClqPR3LVEZRJb4HPnJAzOKrPKbb5gXNqkmhbWSDjyyQ=",
+        "owner": "borgbackup",
+        "repo": "homebrew-tap",
+        "rev": "3b584094ea6e869958cb4be77395c0444291ad16",
+        "type": "github"
+      },
+      "original": {
+        "owner": "borgbackup",
+        "repo": "homebrew-tap",
+        "type": "github"
       }
     }
   },
