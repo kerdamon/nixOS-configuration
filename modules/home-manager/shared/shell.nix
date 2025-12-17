@@ -12,6 +12,11 @@
     historySubstringSearch.enable = true;
     defaultKeymap = "viins"; # vi mode
     initContent = ''
+      alias -g ...=../..
+      alias -g ....=../../..
+      alias -g .....=../../../..
+      alias -g ......=../../../../..
+
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'                          # case insensitive matching
       zstyle ':completion:*' menu no                                                  # don't show completion menu (since I am using fzf-tab plugin)
       zstyle ':completion:*:git-checkout:*' sort false                                # don't mess with order of git checkout targets
