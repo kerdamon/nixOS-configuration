@@ -43,15 +43,22 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-x68-linux = nixpkgs.legacyPackages."x86_64-linux";
+      pkgs-aarch64-linux = nixpkgs.legacyPackages."aarch64-linux";
     in
     {
       homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgs-x68-linux;
         modules = [
           ./hosts/generic-linux/home.nix
           inputs.plasma-manager.homeManagerModules.plasma-manager
+        ];
+      };
+
+      homeConfigurations.khl-storage = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-aarch64-linux;
+        modules = [
+          ./hosts/khl-storage/home.nix
         ];
       };
 

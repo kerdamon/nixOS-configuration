@@ -1,4 +1,5 @@
 # This file contains Home Manager configuration specific to macOS (Darwin) systems
+# TODO move generic stuff to base and workstation stuff to workstation and make conditionals for darwin specific only
 
 { pkgs, ... }:
 {
@@ -13,6 +14,6 @@
   home.file = {
     ".config/karabiner".source = ../../../dotfiles/karabiner;
     ".config/alacritty/alacritty.toml".source = ../../../dotfiles/alacritty.toml;
-    ".config/borgmatic.d/data-local.yml".source = ../../../dotfiles/data-local.borgmatic.darwin.yaml;
+    ".config/borgmatic.d/data-local.yml".source = ../../../dotfiles/data-local.borgmatic.darwin.yaml; # TODO move to workstation or host specific
   };
 }

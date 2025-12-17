@@ -1,0 +1,11 @@
+source_directories:
+  - /Users/kwalas/Data/services
+
+repositories: # TODO add offsite backup
+  - path: /Users/kwalas/Backup/kmac5-data-services
+
+encryption_passcommand: cat /home/kwalas/Secrets/borg-passphrase # TODO change to some keystore solution
+
+keep_daily: 7
+keep_weekly: 4
+keep_monthly: 6
