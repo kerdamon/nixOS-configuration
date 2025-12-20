@@ -11,6 +11,7 @@
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     defaultKeymap = "viins"; # vi mode
+    # TODO extract initContent to a dotfile
     initContent = ''
       alias -g ...=../..
       alias -g ....=../../..
