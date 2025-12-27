@@ -16,7 +16,7 @@ commands:
     when:
       - create
     run:
-      - dokploy-start-compose immich
+      - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-start-compose $(cat ~/Config/backup/immich-compose-id)
 
 keep_daily: 7
 keep_weekly: 4
