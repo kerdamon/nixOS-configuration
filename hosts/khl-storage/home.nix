@@ -11,10 +11,17 @@
 
   home.packages = with pkgs; [
     neofetch
+
+    (pkgs.writeShellScriptBin "dokploy-start-compose" (
+      builtins.readFile ../../scripts/api_calls/dokploy_start_compose.sh
+    ))
+    (pkgs.writeShellScriptBin "dokploy-stop-compose" (
+      builtins.readFile ../../scripts/api_calls/dokploy_stop_compose.sh
+    ))
   ];
 
   home.file = {
-    ".config/borgmatic.d/data-services.yml".source = ./dotfiles/data-services.borgmatic.yaml;
+    ".config/borgmatic.d/immich.yml".source = ./dotfiles/immich.borgmatic.yaml;
   };
 
   # log off and log in after switching to apply changes
