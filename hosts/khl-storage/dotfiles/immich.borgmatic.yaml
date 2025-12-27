@@ -11,7 +11,7 @@ commands:
     when:
       - create
     run:
-      - dokploy-stop-compose immich
+      - DOKPLOY_URL=url DOKPLOY_API_KEY_PATH=/home/kwalas/Secrets/borg-passphrase dokploy-stop-compose immich
   - after: configuration
     when:
       - create
