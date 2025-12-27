@@ -14,7 +14,7 @@
   ];
 
   home.file = {
-    ".config/borgmatic.d/data-services.yml".source = ./dotfiles/data-services.borgmatic.yaml;
+    ".config/borgmatic.d/immich.yml".source = ./dotfiles/immich.borgmatic.yaml;
   };
 
   # log off and log in after switching to apply changes
