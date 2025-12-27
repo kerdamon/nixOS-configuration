@@ -11,11 +11,13 @@ commands:
     when:
       - create
     run: # TODO rework how vars are stored and passed
+      - echo "Stopping Immich dokploy compose"
       - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-stop-compose $(cat ~/Config/backup/immich-compose-id)
   - after: configuration
     when:
       - create
     run:
+      - echo "Starting Immich dokploy compose"
       - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-start-compose $(cat ~/Config/backup/immich-compose-id)
 
 keep_daily: 7
