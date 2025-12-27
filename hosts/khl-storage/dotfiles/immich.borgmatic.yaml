@@ -10,15 +10,15 @@ commands:
   - before: configuration
     when:
       - create
-    run: # TODO rework how vars are stored and passed
-      - echo "Stopping Immich dokploy compose"
-      - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-stop-compose $(cat ~/Config/backup/immich-compose-id)
+    run: # TODO unhardcode magic numbers
+      - docker stop immich_server
+      - docker exec -t immich_postgres pg_dumpall --clean --if-exists --username=postgres | gzip > "/home/kwalas/Data/services/immich/dump.sql.gz"
   - after: configuration
     when:
       - create
     run:
-      - echo "Starting Immich dokploy compose"
-      - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-start-compose $(cat ~/Config/backup/immich-compose-id)
+      - echo "docker start"
+      # - docker start immich_server
 
 keep_daily: 7
 keep_weekly: 4
