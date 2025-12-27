@@ -12,6 +12,7 @@
     historySubstringSearch.enable = true;
     defaultKeymap = "viins"; # vi mode
     # TODO extract initContent to a dotfile
+    # TODO split that into parts and include in modules it is needed (like zellij launch where zellij is enabled)
     initContent = ''
       alias -g ...=../..
       alias -g ....=../../..

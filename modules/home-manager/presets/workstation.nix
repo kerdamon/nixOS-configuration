@@ -6,8 +6,12 @@
     ../shared/ssh.nix
   ];
 
-  # rn obsidian is only available prebuilt for linux in nixpkgs
-  # programs.obsidian.enable = true;
+  # programs.obsidian.enable = true; # rn obsidian is only available prebuilt for linux in nixpkgs
 
-  programs.zellij.enable = true; # temporarily moved from terminal-environment.nix because I don't want this on servers. TODO move back there and make proper option
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = false; # enableZshIntegration causes zellij to be launched in every terminal, also vscode, where I don't want it. I moved zellij init to shell.nix for now.
+  };
+
+  # TODO move zellij init here (zsh with if for vscode)
 }
