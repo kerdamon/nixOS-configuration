@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../../scripts/fzf-preview.sh))
+    (writeShellScriptBin "fzf-preview" (builtins.readFile ../../../scripts/fzf-preview.sh)) # TODO change to writeShellApplication and declare fzf as dependency
   ];
 
   programs.zsh = {

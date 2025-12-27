@@ -17,6 +17,13 @@
     croc
   ];
 
+  home.file = {
+    "tmp/.keep".text = "";
+    "Data/.keep".text = "";
+    "Files/.keep".text = "";
+    "Secrets/.keep".text = "";
+  };
+
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 }

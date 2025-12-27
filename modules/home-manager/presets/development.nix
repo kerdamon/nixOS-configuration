@@ -9,12 +9,14 @@
     nil # needed for vscode nix linter to work
   ];
 
+  home.file = {
+    "Development/.keep".text = "";
+  };
+
   home.shellAliases = {
     "cdd" = "cd ~/Development";
   };
 
   programs.vscode.enable = true;
   programs.gemini-cli.enable = true;
-
-  # TODO activation scripts create ~/Development
 }

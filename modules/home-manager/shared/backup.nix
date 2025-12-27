@@ -4,9 +4,13 @@
     borgbackup
     borgmatic
   ];
+
   services.borgmatic = {
     enable = true;
     frequency = "daily";
   };
-  # TODO create Backup folder in home.file
+
+  home.file = {
+    "Backup/.keep".text = "";
+  };
 }
