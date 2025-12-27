@@ -10,8 +10,8 @@ commands:
   - before: configuration
     when:
       - create
-    run:
-      - DOKPLOY_URL=url DOKPLOY_API_KEY_PATH=/home/kwalas/Secrets/borg-passphrase dokploy-stop-compose immich
+    run: # TODO rework how vars are stored and passed
+      - DOKPLOY_URL=$(cat ~/Config/backup/dokploy-url) DOKPLOY_API_KEY_PATH=~/Secrets/dokploy-api-key dokploy-stop-compose $(cat ~/Config/backup/immich-compose-id)
   - after: configuration
     when:
       - create
