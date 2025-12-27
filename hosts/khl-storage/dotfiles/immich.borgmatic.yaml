@@ -17,8 +17,7 @@ commands:
     when:
       - create
     run:
-      - echo "docker start"
-      # - docker start immich_server
+      - docker start immich_server
 
 keep_daily: 7
 keep_weekly: 4
