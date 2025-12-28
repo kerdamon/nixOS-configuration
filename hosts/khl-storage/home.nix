@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
     ../../modules/home-manager/presets/base.nix
@@ -8,10 +8,6 @@
 
   home.username = "kwalas";
   home.homeDirectory = "/home/kwalas";
-
-  home.packages = with pkgs; [
-    neofetch
-  ];
 
   home.file = {
     ".config/borgmatic.d/immich.yml".source = ./dotfiles/immich.borgmatic.yaml;
