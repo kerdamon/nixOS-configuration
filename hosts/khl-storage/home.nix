@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../../modules/home-manager/presets/base.nix
@@ -15,11 +15,6 @@
 
   home.file = {
     ".config/borgmatic.d/immich.yml".source = ./dotfiles/immich.borgmatic.yaml;
-  };
-
-  # log off and log in after switching to apply changes
-  home.sessionVariables = {
-    "MY_NIX_CONF_PATH" = "${config.home.homeDirectory}/Config/nix"; # TODO put that to base
   };
 
   home.shellAliases = {

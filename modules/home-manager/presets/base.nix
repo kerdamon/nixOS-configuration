@@ -1,6 +1,6 @@
 # This file contains base Home Manager configuration shared across all systems
 
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ../shared/shell.nix
@@ -19,9 +19,15 @@
 
   home.file = {
     "tmp/.keep".text = "";
+    "Config/.keep".text = "";
     "Data/.keep".text = "";
     "Files/.keep".text = "";
     "Secrets/.keep".text = "";
+  };
+
+  # log off and log in after switching to apply changes
+  home.sessionVariables = {
+    "MY_NIX_CONF_PATH" = "${config.home.homeDirectory}/Config/nix";
   };
 
   programs.home-manager.enable = true;
