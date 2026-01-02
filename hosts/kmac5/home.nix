@@ -13,8 +13,4 @@
   home.packages = with pkgs; [
     discord
   ];
-
-  home.shellAliases = {
-    "nix-switch" = "sudo darwin-rebuild switch --flake $MY_NIX_CONF_PATH#kmac5"; # TODO generalize for macOS (host is currently magic number)
-  };
 }

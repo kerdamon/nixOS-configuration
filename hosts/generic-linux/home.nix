@@ -25,7 +25,7 @@
     libsForQt5.kconfig
 
     # scripts
-    (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_linux.sh))
+    (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../scripts/update_linux.sh)) # TODO generalize the script and move to linux
   ];
 
   home.file = {
@@ -37,12 +37,12 @@
   home.sessionVariables = {
     # "MY_NIX_CONF_PATH" = "/home/kered/Data/nix-conf";
     "ANDROID_HOME" = "/home/kered/Files/Android/Sdk";
-    "GIT_EDITOR" = "vim";
+    # "GIT_EDITOR" = "vim";
   };
 
   home.shellAliases = {
-    "nix-switch" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
-    "hm-news" = "home-manager news --flake $MY_NIX_CONF_PATH#generic-linux";
+    # "nix-switch" = "home-manager switch --flake $MY_NIX_CONF_PATH#generic-linux";
+    # "hm-news" = "home-manager news --flake $MY_NIX_CONF_PATH#generic-linux";
     "open" = "kde-open $(fzf -m --preview='fzf-preview {}')";
 
     "shasum" = "sha512sum"; # potential fix for colima requiring shasum command not available on system (available on perl package, but I don't want to install it if not necessary)

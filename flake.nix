@@ -45,33 +45,43 @@
     let
       pkgs-x68-linux = nixpkgs.legacyPackages."x86_64-linux";
       pkgs-aarch64-linux = nixpkgs.legacyPackages."aarch64-linux";
+      hostname-generic-linux = "generic-linux";
+      hostname-khl-storage = "khl-storage";
+      hostname-kmac5 = "kmac5";
     in
     {
-      homeConfigurations."generic-linux" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${hostname-generic-linux} = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-x68-linux;
         modules = [
-          ./hosts/generic-linux/home.nix
+          ./hosts/${hostname-generic-linux}/home.nix
           inputs.plasma-manager.homeManagerModules.plasma-manager
         ];
+        extraSpecialArgs = {
+          hostName = hostname-generic-linux;
+        };
       };
 
-      homeConfigurations.khl-storage = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${hostname-khl-storage} = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs-aarch64-linux;
         modules = [
-          ./hosts/khl-storage/home.nix
+          ./hosts/${hostname-khl-storage}/home.nix
         ];
+        extraSpecialArgs = {
+          hostName = hostname-khl-storage;
+        };
       };
 
-      darwinConfigurations.kmac5 = darwin.lib.darwinSystem {
+      darwinConfigurations.${hostname-kmac5} = darwin.lib.darwinSystem {
         modules = [
-          ./hosts/kmac5/configuration.nix
+          ./hosts/${hostname-kmac5}/configuration.nix
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
+            # TODO this probably coult be put into configuration.nix
             nix-homebrew = {
               enable = true;
               # enableRosetta = true;
-              user = "kwalas";
+              user = "kwalas"; # TODO unhardcode magic value
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
@@ -88,6 +98,7 @@
         ];
         specialArgs = {
           inherit home-manager self;
+          hostName = hostname-kmac5;
         };
       };
     };

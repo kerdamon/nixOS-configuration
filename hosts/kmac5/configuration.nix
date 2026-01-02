@@ -1,10 +1,12 @@
-{ self, ... }:
+{ self, hostName, ... }:
 {
   nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./users.nix
   ];
+
+  networking.hostName = hostName;
 
   homebrew = {
     enable = true;
