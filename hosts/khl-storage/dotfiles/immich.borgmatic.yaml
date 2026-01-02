@@ -4,7 +4,8 @@ source_directories:
 # TODO add offsite backup
 # TODO change path to use vars (e.g. $HOME, $HOST)
 repositories:
-  - path: /mnt/backup/services/kmac5-services-immich
+  - path: /mnt/backup/services/khl-storage-service-immich
+    encryption: repokey
 
 encryption_passcommand: cat /home/kwalas/Secrets/borg-passphrase # TODO change to some keystore solution
 

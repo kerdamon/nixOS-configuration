@@ -5,6 +5,7 @@ source_directories:
 # TODO change path to use vars (e.g. $HOME, $HOST)
 repositories: 
   - path: /Users/kwalas/Backup/kmac5-data-local
+    encryption: repokey
 
 encryption_passcommand: cat /Users/kwalas/Secrets/borg-passphrase # TODO change to some keystore solution
 

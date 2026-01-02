@@ -14,7 +14,7 @@
   home.file = {
     ".config/karabiner".source = ../../../dotfiles/karabiner;
     ".config/alacritty/alacritty.toml".source = ../../../dotfiles/alacritty.toml;
-    ".config/borgmatic.d/data-local.yml".source = ../../../dotfiles/data-local.borgmatic.darwin.yaml; # TODO move to workstation or host specific
+    ".config/borgmatic.d/data-local.yml".source = ../../../dotfiles/data-local.darwin.borgmatic.yaml; # TODO move to workstation or host specific
   };
 
   home.shellAliases = {

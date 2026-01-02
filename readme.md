@@ -28,7 +28,7 @@ To rebuild system use `nix-switch` (alias). To update flake and then switch use 
 - karabiner-elements should work (if problem with grabber is still present go to settings Privacy and protection > input monitoring and add `/Library/Application\ Support/org.pqrs/Karabiner-Elements/bin/karabiner_grabber` manually)
 - init secrets
   - borg repo passphrase (~/Secrets/borg-passphrase)
-- init borg repo `sudo borgmatic repo-create --encryption repokey` ([link](https://torsion.org/borgmatic/how-to/set-up-backups/#repository-creation))
+- init borg repo `sudo borgmatic repo-create` ([link](https://torsion.org/borgmatic/how-to/set-up-backups/#repository-creation))
 
 # Home-manager standalone on linux
 
