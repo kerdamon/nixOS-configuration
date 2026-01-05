@@ -8,10 +8,13 @@
     ".p10k.zsh".source = ../../../dotfiles/p10k.zsh;
   };
 
+  home.sessionVariables = {
+    ZVM_SYSTEM_CLIPBOARD_ENABLED = "true";
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     initContent = lib.mkMerge [
       # TODO think about enabling powerlevel10k instant prompt here. It didn't work with my zellij setup, so i left it disabled for now
@@ -23,14 +26,15 @@
     antidote = {
       enable = true;
       plugins = [
-        "zsh-users/zsh-completions"
+        "mattmc3/ez-compinit"
+        "zsh-users/zsh-completions kind:fpath path:src"
         "getantidote/use-omz" # oh-my-zsh dependencies - enables to use ozm plugins
-        # "ohmyzsh/ohmyzsh path:lib" # omz core functionalities (if I understand correctly)
         "ohmyzsh/ohmyzsh path:plugins/git"
-        "ohmyzsh/ohmyzsh path:plugins/command-not-found" # TODO doesn't work, check how to fix this
+        "ohmyzsh/ohmyzsh path:plugins/command-not-found"
         "Aloxaf/fzf-tab"
         "romkatv/powerlevel10k" # prompt
         "jeffreytse/zsh-vi-mode"
+        "zdharma-continuum/fast-syntax-highlighting kind:defer"
       ];
     };
   };
