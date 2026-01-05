@@ -15,6 +15,7 @@ zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff $word 
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview 'case "$group" in "modified file") git diff $word | delta ;; "recent commit object name") git show --color=always $word | delta ;; *) git log --color=always $word ;; esac'
 
 bindkey -M vicmd '/' fzf-history-widget
+bindkey ' ' magic-space
 
 function zvm_after_init() {
   bindkey -M viins '^R' fzf-history-widget # fix for fzf in reverse search, since zsh-vi-mode ovverides it. https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
