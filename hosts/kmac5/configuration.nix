@@ -53,5 +53,9 @@
       KeyRepeat = 1; # Fastest
       InitialKeyRepeat = 15;
     };
+
+    # screensaver options doesn't work with current version of nix-darwin
+    # screensaver.askForPassword = true;
+    # screensaver.askForPasswordDelay = 0;
   };
 }

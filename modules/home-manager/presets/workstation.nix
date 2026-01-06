@@ -1,12 +1,18 @@
 # This file contains Home Manager configuration specific to workstations (laptop, PC etc.)
 
-{ ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ../shared/ssh.nix
   ];
 
   # programs.obsidian.enable = true; # rn obsidian is only available prebuilt for linux in nixpkgs
+
+  home.packages =
+    with pkgs;
+    lib.optionals stdenv.isDarwin [
+      notion-app
+    ];
 
   programs.zellij = {
     enable = true;
