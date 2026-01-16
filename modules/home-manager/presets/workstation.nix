@@ -6,13 +6,13 @@
     ../shared/ssh.nix
   ];
 
-  # programs.obsidian.enable = true; # rn obsidian is only available prebuilt for linux in nixpkgs
-
   home.packages =
     with pkgs;
     lib.optionals stdenv.isDarwin [
       notion-app
     ];
+
+  programs.obsidian.enable = true;
 
   programs.zellij = {
     enable = true;

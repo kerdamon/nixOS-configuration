@@ -18,7 +18,6 @@
       "raycast"
       "karabiner-elements"
       "tailscale-app" # services.tailscale does not install the app and does not enable needed permissions in macos, so exit nodes don't work
-      "obsidian"
     ];
   };
 
