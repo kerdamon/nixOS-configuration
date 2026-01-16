@@ -13,7 +13,6 @@
 
   home.packages = with pkgs; [
     # GUI
-    obsidian
     discord
     affine
 
