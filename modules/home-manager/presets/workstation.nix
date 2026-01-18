@@ -4,6 +4,7 @@
 {
   imports = [
     ../shared/ssh.nix
+    ../shared/terminal.nix
   ];
 
   home.packages =

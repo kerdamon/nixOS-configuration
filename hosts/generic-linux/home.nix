@@ -28,7 +28,6 @@
   ];
 
   home.file = {
-    ".config/kitty/kitty.conf".source = ../../dotfiles/kitty.conf;
     ".config/autostart/ueli.desktop".source = ../../dotfiles/ueli-autostart.desktop;
   };
 

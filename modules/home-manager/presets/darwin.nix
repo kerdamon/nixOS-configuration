@@ -6,14 +6,11 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    alacritty
-
     (writeShellScriptBin "nix-update-switch" (builtins.readFile ../../../scripts/update_mac.sh))
   ];
 
   home.file = {
     ".config/karabiner".source = ../../../dotfiles/karabiner;
-    ".config/alacritty/alacritty.toml".source = ../../../dotfiles/alacritty.toml;
     ".config/borgmatic.d/data-local.yml".source = ../../../dotfiles/data-local.darwin.borgmatic.yaml; # TODO move to workstation or host specific
   };
 
