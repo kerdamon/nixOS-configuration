@@ -14,10 +14,11 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      "zen"
-      "raycast"
-      "karabiner-elements"
-      "tailscale-app" # services.tailscale does not install the app and does not enable needed permissions in macos, so exit nodes don't work
+      "zen" # not yet available in nixpkgs
+      "raycast" # available in nixpkgs, but doesn't work out of the box
+      "karabiner-elements" # hm wasn't working at the time
+      "tailscale-app" # hm services.tailscale does not install the app and does not enable needed permissions in macos, so exit nodes don't work
+      "logi-options+" # not available in nixpkgs
     ];
   };
 

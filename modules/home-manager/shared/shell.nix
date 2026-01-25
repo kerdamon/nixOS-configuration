@@ -26,7 +26,7 @@
     antidote = {
       enable = true;
       plugins = [
-        "mattmc3/ez-compinit"
+        "mattmc3/ez-compinit" # handles compinit initialization - needed for completions to work properly
         "zsh-users/zsh-completions kind:fpath path:src"
         "getantidote/use-omz" # oh-my-zsh dependencies - enables to use ozm plugins
         "ohmyzsh/ohmyzsh path:plugins/git"
